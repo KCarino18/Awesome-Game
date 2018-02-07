@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1517852301 source:c:\users\kyle\desktop\codeblocks\rpg text adventure\resource.rc
+
+1518024455 source:c:\users\kyle\desktop\codeblocks\rpg text adventure\main.cpp
+	<iostream>
+	<iomanip>
+
