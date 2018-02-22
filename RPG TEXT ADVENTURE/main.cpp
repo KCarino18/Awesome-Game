@@ -155,7 +155,7 @@ int main()
     }
 
     x.healthPoints = (x.constitution * 5) + 10;
-    x.manaPoints = (x.wisdom * 3) + (magicAbility * 5);
+    x.manaPoints = (x.intelligence * 5) + (magicAbility * 5);
     x.maxHealth = x.healthPoints;
     x.maxMana = x.manaPoints;
     x.barter = (x.charisma /3) + 2;

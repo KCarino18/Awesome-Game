@@ -340,7 +340,7 @@ void Leave()
     cout <<"\n|===============================================================|";
     cout <<"\n                    Choice: ";
 }
-void Bar()
+void Bar(STAT x)
 {
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout <<"\n|===============================================================|";
@@ -351,22 +351,24 @@ void Bar()
     cout <<"\n|---------------------------------------------------------------|";
     cout <<"\n|===============================================================|";
     cout <<"\n|-Your options:-                                                |";
-    cout <<"\n|           1.)Tell the gentleman that the                      |";
-    cout <<"\n|              clovikal guild has sent you                      |";
-    cout <<"\n|              to investigate the dragon                        |";
-    cout <<"\n|              sightings                                        |";
+    cout <<"\n|           1.)Agree to pay the fee (-30 gold)                  |";
     cout <<"\n|                                                               |";
-    cout <<"\n|           2.)Tell him that you are his child                  |";
-    cout <<"\n|               and that you haven't been home                  |";
-    cout <<"\n|               in 20 cycles so that he may not                 |";
-    cout <<"\n|               recognize you.(Persuasion check)                |";
+    cout <<"\n|           2.)Try to persuade him to lower the price (barter)  |";
+    cout <<"\n|                           Current Barter: " << x.barter;
     cout <<"\n|                                                               |";
-    cout <<"\n|           3.)Cast sleep on him (magic check)                  |";
+    cout <<"\n|           3.)cast mind control on him (requires 15 Wisdom)    |";
+    cout <<"\n|                           Current Wisdom: " << x.wisdom;
     cout <<"\n|                                                               |";
     cout <<"\n|         Scroll up for your character sheet to help            |";
     cout <<"\n|===============================================================|";
     cout <<"\n                    Choice: ";
 }
+void payInnKeeper()
+{
+
+}
+
+
 
 
 

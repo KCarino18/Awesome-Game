@@ -20,7 +20,7 @@ STAT makemonsterSuperEasy()
     int healAbility = (rand() % 3)+1;
 
     x.healthPoints = (x.constitution * 5) + 10;
-    x.manaPoints = (x.wisdom * 3) + (magicAbility * 5);
+    x.manaPoints = (x.intelligence * 3) + (magicAbility * 5);
     x.maxHealth = x.healthPoints;
     x.maxMana = x.manaPoints;
     x.barter = (x.charisma /3) + 2;
@@ -54,7 +54,7 @@ STAT makemonsterEasy()
     int healAbility = (rand() % 5)+1;
 
     x.healthPoints = (x.constitution * 5) + 10;
-    x.manaPoints = (x.wisdom * 3) + (magicAbility * 5);
+    x.manaPoints = (x.intelligence * 3) + (magicAbility * 5);
     x.maxHealth = x.healthPoints;
     x.maxMana = x.manaPoints;
     x.barter = (x.charisma /3) + 2;
@@ -89,7 +89,7 @@ STAT makemonsterMedium()
     int healAbility = (rand() % 8)+1;
 
     x.healthPoints = (x.constitution * 5) + 10;
-    x.manaPoints = (x.wisdom * 3) + (magicAbility * 5);
+    x.manaPoints = (x.intelligence * 3) + (magicAbility * 5);
     x.maxHealth = x.healthPoints;
     x.maxMana = x.manaPoints;
     x.barter = (x.charisma /3) + 2;
@@ -124,7 +124,7 @@ STAT makemonsterHard()
     int healAbility = (rand() % 10)+1;
 
     x.healthPoints = (x.constitution * 5) + 10;
-    x.manaPoints = (x.wisdom * 3) + (magicAbility * 5);
+    x.manaPoints = (x.intelligence * 3) + (magicAbility * 5);
     x.maxHealth = x.healthPoints;
     x.maxMana = x.manaPoints;
     x.barter = (x.charisma /3) + 2;
@@ -159,7 +159,7 @@ STAT makemonsterExtreme()
     int healAbility = (rand() % 15)+1;
 
     x.healthPoints = (x.constitution * 5) + 10;
-    x.manaPoints = (x.wisdom * 3) + (magicAbility * 5);
+    x.manaPoints = (x.intelligence * 3) + (magicAbility * 5);
     x.maxHealth = x.healthPoints;
     x.maxMana = x.manaPoints;
     x.barter = (x.charisma /3) + 2;
