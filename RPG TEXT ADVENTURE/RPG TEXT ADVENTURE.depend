@@ -1,7 +1,63 @@
 # depslib dependency file v1.0
-1517852301 source:c:\users\kyle\desktop\codeblocks\rpg text adventure\resource.rc
+1518099472 source:c:\users\kyle\desktop\codeblocks\rpg text adventure\resource.rc
 
-1518024455 source:c:\users\kyle\desktop\codeblocks\rpg text adventure\main.cpp
+1519235031 source:c:\users\kyle\desktop\codeblocks\rpg text adventure\main.cpp
 	<iostream>
+	<array>
+	<memory>
+	<new>
+	<string>
 	<iomanip>
+	<stdlib.h>
+	<vector>
+	<algorithm>
+	<cassert>
+	<fstream>
+	<ctime>
+	"Classes_or_Stats.h"
+	"Verifiers.h"
+	"Menus.h"
+	"BattleSystem.h"
+
+1519060720 c:\users\kyle\desktop\codeblocks\rpg text adventure\classes_or_stats.h
+
+1519060211 c:\users\kyle\desktop\codeblocks\rpg text adventure\verifiers.h
+
+1519001135 c:\users\kyle\desktop\codeblocks\rpg text adventure\menus.h
+
+1519272164 source:c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\main.cpp
+	<iostream>
+	<array>
+	<memory>
+	<new>
+	<string>
+	<iomanip>
+	<stdlib.h>
+	<vector>
+	<algorithm>
+	<cassert>
+	<fstream>
+	<ctime>
+	<cstdlib>
+	"Classes_or_Stats.h"
+	"Verifiers.h"
+	"Menus.h"
+	"BattleSystem.h"
+	"HPBar.h"
+
+1519268271 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\classes_or_stats.h
+
+1519060212 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\verifiers.h
+
+1519265889 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\menus.h
+
+1518099472 source:c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\resource.rc
+
+1519235642 c:\users\kyle\desktop\codeblocks\rpg text adventure\battlesystem.h
+
+1519272164 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\battlesystem.h
+	"HPBar.h"
+	"Classes_or_Stats.h"
+
+1519271916 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\hpbar.h
 

@@ -32,9 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="BattleSystem.h" />
 		<Unit filename="Classes_or_Stats.h" />
+		<Unit filename="HPBar.h" />
+		<Unit filename="Menus.h" />
 		<Unit filename="Verifiers.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
