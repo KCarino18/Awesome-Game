@@ -271,7 +271,7 @@ void LevelOne()
     cout <<"\n|===============================================================|";
     cout <<"\n          Choice: ";
 }
-void Knock()
+void Knock(STAT x)
 {
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout <<"\n|===============================================================|";
@@ -281,25 +281,36 @@ void Knock()
     cout <<"\n|        and asks you angrily asks you                          |";
     cout <<"\n|        What the hell are you doing knocking                   |";
     cout <<"\n|        on my door in the middle of the night                  |";
+    std::string canCast;
+    if (x.wisdom >= 5)
+    {
+        canCast="TRUE";
+    }
+    else
+    {
+        canCast="FALSE";
+    }
     cout <<"\n|===============================================================|";
     cout <<"\n|-Your options:-                                                |";
-    cout <<"\n|        1.)Tell the gentleman that the                         |";
-    cout <<"\n|           clovikal guild has sent you                         |";
-    cout <<"\n|           to investigate the dragon                           |";
-    cout <<"\n|           sightings                                           |";
+    cout <<"\n|           1.)Tell the gentleman that the                      |";
+    cout <<"\n|              clovikal guild has sent you                      |";
+    cout <<"\n|              to investigate the dragon                        |";
+    cout <<"\n|              sightings                                        |";
     cout <<"\n|                                                               |";
-    cout <<"\n|        2.)Tell him that you are his child                     |";
-    cout <<"\n|           and that you haven't been home                      |";
-    cout <<"\n|           in 20 cycles so that he may not                     |";
-    cout <<"\n|           recognize you.(Persuasion check)                    |";
+    cout <<"\n|           2.)Tell him that you are his child                  |";
+    cout <<"\n|              and that you haven't been home                   |";
+    cout <<"\n|              in 20 cycles so that he may not                  |";
+    cout <<"\n|              recognize you.(Persuasion check)                 |";
+    cout <<"\n|              Current Persuasion: " << x.persuasion;
     cout <<"\n|                                                               |";
-    cout <<"\n|        3.)Cast sleep on him (magic check)                     |";
+    cout <<"\n|           3.)Cast sleep on him (magic check)                  |";
+    cout <<"\n|              Can cast? (5 wisdom): "<< canCast;
     cout <<"\n|                                                               |";
-    cout <<"\n|  Scroll up for your character sheet to help                   |";
+    cout <<"\n|         Scroll up for your character sheet to help            |";
     cout <<"\n|===============================================================|";
-    cout <<"\n          Choice: ";
+    cout <<"\n                    Choice: ";
 }
-void Break_In()
+void Break_In(STAT x)
 {
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout <<"\n|===============================================================|";
@@ -311,6 +322,7 @@ void Break_In()
     cout <<"\n|---------------------------------------------------------------|";
     cout <<"\n|        1.)  Steal everything that you can find                |";
     cout <<"\n|             (thieving check)                                  |";
+    cout <<"\n|             Current Thieving: " << x.thieving;
     cout <<"\n|                                                               |";
     cout <<"\n|        2.)  Wake up the resident                              |";
     cout <<"\n|===============================================================|";
@@ -318,27 +330,13 @@ void Break_In()
 }
 void Leave()
 {
+
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout <<"\n|===============================================================|";
     cout <<"\n|         You wait until Daytime to re approach the house       |";
+    cout <<"\n|         and head to the nearest inn                           |";
     cout <<"\n|---------------------------------------------------------------|";
-    cout <<"\n|===============================================================|";
-    cout <<"\n|-Your options:-                                                |";
-    cout <<"\n|           1.)Tell the gentleman that the                      |";
-    cout <<"\n|              clovikal guild has sent you                      |";
-    cout <<"\n|              to investigate the dragon                        |";
-    cout <<"\n|              sightings                                        |";
-    cout <<"\n|                                                               |";
-    cout <<"\n|           2.)Tell him that you are his child                  |";
-    cout <<"\n|               and that you haven't been home                  |";
-    cout <<"\n|               in 20 cycles so that he may not                 |";
-    cout <<"\n|               recognize you.(Persuasion check)                |";
-    cout <<"\n|                                                               |";
-    cout <<"\n|           3.)Cast sleep on him (magic check)                  |";
-    cout <<"\n|                                                               |";
-    cout <<"\n|         Scroll up for your character sheet to help            |";
-    cout <<"\n|===============================================================|";
-    cout <<"\n                    Choice: ";
+    system("pause");
 }
 void Bar(STAT x)
 {

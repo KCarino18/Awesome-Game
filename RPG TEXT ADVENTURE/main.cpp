@@ -168,8 +168,10 @@ int main()
     x.healing = healAbility/4;
     x.magic = (x.wisdom/3);
     x.plusAttack = (x.strength/3);
+    x.persuasion = (x.charisma/3);
+    x.weaponType = (weapons/2);
 
-    x.gold = (x.charisma * 10) + 25;
+    x.gold = (x.charisma * 10) + 30;
     Difficulty();
     switch (verifyInput(0,5))
     {
@@ -195,8 +197,7 @@ int main()
     switch (verifyInput(0,4))
     {
     case 1: //Knock
-        CharacterSheet(x);
-        Knock();
+        Knock(x);
         switch(verifyInput(0,4))
         {
         case 1: // Explaination
@@ -206,13 +207,15 @@ int main()
             break;
         case 2: // im your child!
             d20 = (rand() % 20)+1;
-            d20 + x.persuasion;
+            d20 += x.persuasion;
             if ( d20 > 10)
             {
                 cout << "\nSuccess\n" << endl;
                 successOrFail = 1;
                 system("pause");
-                cout <<"\nYou are able to trick him into thinking that you are his child and then you ask him about the dragon sighting for 'scientific' purposes and he tells you that they were sighted at. you bid him farewell but he stops you before leaving and gives you a health potion. You thank him and leave him to go to the inn that is in town to get some well needed sleep\n";
+                cout <<"\nYou are able to trick him into thinking that you are his child and then you ask him about the dragon sighting for 'scientific' purposes and he tells you that they were sighted at. you bid him farewell but he stops you before leaving and gives you a health potion and 10 gold. You thank him and leave him to go to the inn that is in town to get some well needed sleep\n";
+                x.HPots++;
+                x.gold +=10;
                 system("pause");
             }
             else
@@ -248,7 +251,7 @@ int main()
         break;
 
     case 2: //break in
-        Break_In();
+        Break_In(x);
         switch(verifyInput(0,3))
         {
         case 1:
@@ -325,11 +328,23 @@ int main()
     }
     TitleLogo();
     system("pause");
-    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou arrive at the inn and enter it to try to find a room to sleep in.\n";
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou arrive at the inn and enter it to try to find a room to sleep in.\n";
     system("pause");
-    cout << "\nYou go to the inn to get some sleep and you \n";
+    Bar(x);
+    switch(verifyInput(0,4))
+    {
+    case 1://agree to pay -30 gold
+        cout <<"\nYou pay the 30 gold and get some sleep.\n";
+        system("pause");
+        break;
 
-    opponent = makemonsterEasy();
-    Battle(x,opponent);
+    case 2: //TRY TO BARTER
+        cout <<"\nYou try to barter with the innkeeper to try to get him to lower his price.";
+        d20 = (rand() %20) +1;
+        break;
+
+    }
+
+
     return 0;
 }

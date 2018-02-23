@@ -323,7 +323,130 @@ STAT Battle(STAT x, STAT y)
     int second =0;
     int melee = 0;
     unsigned int steald20;
-    unsigned int howmuch;
+    if (x.weaponType >=60)
+    {
+        melee = (rand() % 60)+1;
+    }
+    else if (x.weaponType >=55)
+    {
+        melee = (rand() % 55)+1;
+    }
+    else if (x.weaponType >=45)
+    {
+        melee = (rand() % 45)+1;
+    }
+    else if (x.weaponType >=40)
+    {
+        melee = (rand() % 40)+1;
+    }
+    else if (x.weaponType >=35)
+    {
+        melee = (rand() % 35)+1;
+    }
+    else if (x.weaponType >=30)
+    {
+        melee = (rand() % 30)+1;
+    }
+    else if (x.weaponType >=25)
+    {
+        melee = (rand() % 25)+1;
+    }
+    else if (x.weaponType >=24)
+    {
+        melee = (rand() % 24)+1;
+    }
+    else if (x.weaponType >=23)
+    {
+        melee = (rand() % 23)+1;
+    }
+    else if (x.weaponType >=22)
+    {
+        melee = (rand() % 22)+1;
+    }
+    else if (x.weaponType >=21)
+    {
+        melee = (rand() % 21)+1;
+    }
+    else if (x.weaponType >=20)
+    {
+        melee = (rand() % 20)+1;
+    }
+    else if (x.weaponType >=19)
+    {
+        melee = (rand() % 19)+1;
+    }
+    else if (x.weaponType >=18)
+    {
+        melee = (rand() % 18)+1;
+    }
+    else if (x.weaponType >=17)
+    {
+        melee = (rand() % 17)+1;
+    }
+    else if (x.weaponType >=16)
+    {
+        melee = (rand() % 16)+1;
+    }
+    else if (x.weaponType >=15)
+    {
+        melee = (rand() % 15)+1;
+    }
+    else if (x.weaponType >=14)
+    {
+        melee = (rand() % 14)+1;
+    }
+    else if (x.weaponType >=13)
+    {
+        melee = (rand() % 13)+1;
+    }
+    else if (x.weaponType >=12)
+    {
+        melee = (rand() % 12)+1;
+    }
+    else if (x.weaponType >=11)
+    {
+        melee = (rand() % 11)+1;
+    }
+    else if (x.weaponType >=10)
+    {
+        melee = (rand() % 10)+1;
+    }
+    else if (x.weaponType >=9)
+    {
+        melee = (rand() % 9)+1;
+    }
+    else if (x.weaponType >=8)
+    {
+        melee = (rand() % 8)+1;
+    }
+    else if (x.weaponType >=7)
+    {
+        melee = (rand() % 7)+1;
+    }
+    else if (x.weaponType >=6)
+    {
+        melee = (rand() % 6)+1;
+    }
+    else if (x.weaponType >=5)
+    {
+        melee = (rand() % 5)+1;
+    }
+    else if (x.weaponType >=4)
+    {
+        melee = (rand() % 4)+1;
+    }
+    else if (x.weaponType >=3)
+    {
+        melee = (rand() % 3)+1;
+    }
+    else if (x.weaponType >=2)
+    {
+        melee = (rand() % 2)+1;
+    }
+    else if (x.weaponType >=1)
+    {
+        melee = 1;
+    }
 
     while (x.healthPoints > 0 || y.healthPoints > 0)
     {

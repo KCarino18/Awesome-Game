@@ -22,6 +22,7 @@ struct STAT
     int attack = 0;
     int armorClass = 0;
     int weaponSpec = 0;
+    int weaponType = 0;
     int thieving = 0;
     int barter = 0;
     int gold = 0;
