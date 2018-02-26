@@ -30,7 +30,7 @@ int main()
     srand(time(0));
     int armor,weapons, magicAbility,buffAbility,healAbility, rangeAbility; // DECLARING LOCAL VARIABLES
     unsigned int d20,d12,d8,d6;
-    bool successOrFail;
+    bool successOrFail, moveOn;
     Mainmenu();
     switch (verifyInput(0,10)) // ADDS UP TO 30
     {
@@ -171,7 +171,7 @@ int main()
     x.persuasion = (x.charisma/3);
     x.weaponType = (weapons/2);
 
-    x.gold = (x.charisma * 10) + 30;
+    x.gold = (x.charisma * 10) + 65;
     Difficulty();
     switch (verifyInput(0,5))
     {
@@ -321,29 +321,63 @@ int main()
         }
         break;
     case 3: //Leave
-        cout << "\nYou leave and head for the local inn to just wait until the morning.\n";
+        Leave();
         successOrFail = 0;
         system("pause");
         break;
     }
     TitleLogo();
     system("pause");
-    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou arrive at the inn and enter it to try to find a room to sleep in.\n";
+    GoingToINN();
     system("pause");
     Bar(x);
     switch(verifyInput(0,4))
     {
     case 1://agree to pay -30 gold
-        cout <<"\nYou pay the 30 gold and get some sleep.\n";
+        payInnKeeper(x);
         system("pause");
         break;
 
     case 2: //TRY TO BARTER
-        cout <<"\nYou try to barter with the innkeeper to try to get him to lower his price.";
-        d20 = (rand() %20) +1;
+        InnKeeperBarter(x);
+        system("pause");
+        break;
+    case 3: //CAST MIND CONTROL ON HIM
+        MindControlInnkeeper(x);
+        system("pause");
+        break;
+    }
+
+    if (successOrFail = 0)
+    {
+        goingbackOldMan(x);
+        successOrFail = 1;
+    }
+    moveOn = 0;
+    while (moveOn = 0)
+        switch(verifyInput(0,6))
+    {
+    case 1: // go find monsters to fight
+        system("pause");
         break;
 
+    case 2: // go to armorsmith
+        system("pause");
+        break;
+
+    case 3: // Go to weaponsmith
+        system("pause");
+        break;
+
+    case 4: //go to cleric to get healed
+        system("pause")
+        break;
+
+    case 5: //go to a different inn to rest
+        system("pause");
+        break;
     }
+
 
 
     return 0;

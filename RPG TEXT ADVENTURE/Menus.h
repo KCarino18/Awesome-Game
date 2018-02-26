@@ -306,7 +306,6 @@ void Knock(STAT x)
     cout <<"\n|           3.)Cast sleep on him (magic check)                  |";
     cout <<"\n|              Can cast? (5 wisdom): "<< canCast;
     cout <<"\n|                                                               |";
-    cout <<"\n|         Scroll up for your character sheet to help            |";
     cout <<"\n|===============================================================|";
     cout <<"\n                    Choice: ";
 }
@@ -335,8 +334,7 @@ void Leave()
     cout <<"\n|===============================================================|";
     cout <<"\n|         You wait until Daytime to re approach the house       |";
     cout <<"\n|         and head to the nearest inn                           |";
-    cout <<"\n|---------------------------------------------------------------|";
-    system("pause");
+    cout <<"\n|---------------------------------------------------------------|\n\n";
 }
 void Bar(STAT x)
 {
@@ -357,13 +355,126 @@ void Bar(STAT x)
     cout <<"\n|           3.)cast mind control on him (requires 15 Wisdom)    |";
     cout <<"\n|                           Current Wisdom: " << x.wisdom;
     cout <<"\n|                                                               |";
-    cout <<"\n|         Scroll up for your character sheet to help            |";
     cout <<"\n|===============================================================|";
     cout <<"\n                    Choice: ";
 }
-void payInnKeeper()
+void GoingToINN()
 {
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|    You arrive at the inn and enter it to try to find a        |";
+    cout <<"\n|    room to sleep in.                                          |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|===============================================================|\n\n";
+}
+STAT payInnKeeper(STAT x)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|    You pay the innkeeper 30 gold and he shows you to your     |";
+    cout <<"\n|    room for the night and you find yourself in the worst      |";
+    cout <<"\n|    room you had ever seen in your life. You settle in on      |";
+    cout <<"\n|    uncomfortable bed and rest                                 |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|===============================================================|\n\n";
+    x.healthPoints = x.maxHealth;
+    x.manaPoints = x.maxMana;
+    x.gold -= 30;
+    return (x);
+}
+STAT MindControlInnkeeper(STAT x)
+{
+    int d20 = ((rand() %20) +1) + x.magic;
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|    You attempt to cast mind control on him                    |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|===============================================================|";
+    if (x.wisdom <= 15)
+    {
+    cout <<"\n|    Why would you ever try to cast mind control when you       |";
+    cout <<"\n|    don't even know the spell to begin with. He kicks you      |";
+    cout <<"\n|    out and you end up sleeping in a rat infested ally way     |";
+    cout <<"\n|    You don't end up resting well                              |";
+    cout <<"\n|===============================================================|\n\n";
+    }
+    else
+    {
+        if (d20 >= 13)
+        {
+            cout <<"\n|    You successfully cast mind control on him and he gives     |";
+            cout <<"\n|    you the room for absolutely free.                          |";
+            cout <<"\n|===============================================================|\n\n";
+        }
+        else
+        {
+            cout <<"\n|    You fail miserably and are immediately kicked out          |";
+            cout <<"\n|    and you end up sleeping in a rat infested ally way         |";
+            cout <<"\n|    You don't end up resting well                              |";
+            cout <<"\n|===============================================================|\n\n";
+        }
+    }
+    return (x);
+}
 
+STAT InnKeeperBarter(STAT x)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|    You try to get the innkeeper to lower his price on the     |";
+    cout <<"\n|    room and try to show him what is wrong with the room       |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|===============================================================|";
+    int d20 = (rand() %20) +1;
+        d20 += x.barter;
+        if (d20 > 15)
+        {
+            cout <<"\n|    You are successful in showing the innkeeper the bad room   |";
+            cout <<"\n|    He lowers his price by 15 gold pieces                      |";
+            cout <<"\n|===============================================================|\n\n";
+            x.gold  -= 15;
+        }
+        else
+        {
+            cout <<"\n|    You fail at trying to barter with him and he actually      |";
+            cout <<"\n|    raises his price by 10 gold pieces and you reluctantly     |";
+            cout <<"\n|    pay him the price he demands                               |";
+            cout <<"\n|===============================================================|\n\n";
+            x.gold -= 40;
+        }
+        x.healthPoints = x.maxHealth;
+        x.manaPoints = x.maxMana;
+    return (x);
+}
+STAT goingbackOldMan(STAT x)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|    You go back to the old mans house and try to persuade      |";
+    cout <<"\n|    him to tell you where the dragon sighting are.             |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|    He asks for 5 gold for the information and you give        |";
+    cout <<"\n|    him the 5 gold and he tells you everything he knows        |";
+    cout <<"\n|===============================================================|";
+    x.gold -= 5;
+    return (x);
+}
+
+void onTheRoadAgain()
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                           Act II                              |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|       You leave right after learning of the sighting and      |";
+    cout <<"\n|       head into the wild                                      |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|           1.) Knock                                           |";
+    cout <<"\n|           2.) Break in                                        |";
+    cout <<"\n|           3.) Leave                                           |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n          Choice: ";
 }
 
 
