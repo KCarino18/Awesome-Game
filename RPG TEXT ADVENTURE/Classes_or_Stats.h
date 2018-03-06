@@ -36,6 +36,6 @@ struct STAT
     int experience = 100;
     int turnOrder = 0;
     bool yourTurn = 1;
-};
 
+};
 #endif // CLASSES_OR_STATS_H_INCLUDED

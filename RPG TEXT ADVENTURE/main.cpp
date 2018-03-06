@@ -109,6 +109,7 @@ int main()
     };
 
     STAT x;
+
     StatsMenu();
 
     cout << "Please enter in your stats adding up to a total of 32" << endl;
@@ -153,6 +154,7 @@ int main()
     cout <<"\nRemaining total is " << x.totalLeft << "\nWisdom? " << endl;
     x.wisdom = verifyInput(-1,x.totalLeft+1);
     }
+
 
     x.healthPoints = (x.constitution * 5) + 10;
     x.manaPoints = (x.intelligence * 5) + (magicAbility * 5);
@@ -204,6 +206,7 @@ int main()
             cout <<"\nYou try to explain to him that you are a servant of the guild and that you are trying to look for the dragons. he is hesitant at first but gradually reveals the location of the dragon sighting and after he tell you this, he sticks out his hand gesturing that he would like some gold. You reluctantly give him 25 gold and leave for the inn\n";
             x.gold -=25;
             system("pause");
+            successOrFail = 1;
             break;
         case 2: // im your child!
             d20 = (rand() % 20)+1;
@@ -333,52 +336,104 @@ int main()
     Bar(x);
     switch(verifyInput(0,4))
     {
+
     case 1://agree to pay -30 gold
-        payInnKeeper(x);
+        x = payInnKeeper(x);
         system("pause");
         break;
 
     case 2: //TRY TO BARTER
-        InnKeeperBarter(x);
+        x = InnKeeperBarter(x);
         system("pause");
         break;
+
     case 3: //CAST MIND CONTROL ON HIM
-        MindControlInnkeeper(x);
+        x = MindControlInnkeeper(x);
         system("pause");
         break;
     }
 
-    if (successOrFail = 0)
+    if (successOrFail == 0)
     {
-        goingbackOldMan(x);
+        x = goingbackOldMan(x);
+        system("pause");
         successOrFail = 1;
     }
+
     moveOn = 0;
-    while (moveOn = 0)
-        switch(verifyInput(0,6))
+    while (moveOn == 0)
+{
+        onTheRoadAgain();
+        STAT y =makemonsterSuperEasy();
+        d6 = (rand() % 6)+1;
+        switch(verifyInput(0,7))
     {
     case 1: // go find monsters to fight
+        wilderness();
         system("pause");
+        if(d6 == 1)
+        {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a wild boar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            system("pause");
+        }
+        else if (d6 == 2)
+        {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a small goblin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            system("pause");
+        }
+
+        else if (d6 == 3)
+        {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a deserter\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            system("pause");
+        }
+
+        else if (d6 == 4)
+        {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a highwayman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            system("pause");
+        }
+        else if (d6 == 5)
+        {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a giant spider\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            system("pause");
+        }
+
+        else
+        {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a Wisp\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            system("pause");
+        }
+        x = Battle(x,y);
+        x = levelCheck(x);
         break;
 
     case 2: // go to armorsmith
+        cout << "ARMOR";
         system("pause");
         break;
 
     case 3: // Go to weaponsmith
+       cout <<"WEAPONS";
         system("pause");
         break;
 
     case 4: //go to cleric to get healed
-        system("pause")
+       cout << "HEALING";
+        system("pause");
         break;
 
     case 5: //go to a different inn to rest
+       cout <<"RESTING TIME";
+        system("pause");
+        break;
+
+    case 7: //move on to the next one
+        cout <<"moveing on";
         system("pause");
         break;
     }
-
-
+}
 
     return 0;
 }

@@ -1,6 +1,10 @@
 #ifndef VERIFIERS_H_INCLUDED
 #define VERIFIERS_H_INCLUDED
 
+
+
+
+
 int verifyInput(int param1, int param2)
 //precondition: takes 2 parameters, param1 and param2. param1 being the smallest number the number can be and param2 being the biggest number
 //postcondition: outs puts and integer that is between the two parameters but will continue to loop if those parameters are not met

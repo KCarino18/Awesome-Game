@@ -1,6 +1,7 @@
 #ifndef MENUS_H_INCLUDED
 #define MENUS_H_INCLUDED
 
+
 void Mainmenu()
  // These make up the interface for presentation purposes
 {
@@ -107,7 +108,7 @@ void CharacterSheet (STAT x)
 
 void Difficulty()
 {
-    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout <<"\n|==================================|";
     cout <<"\n|           DIFFICULTY             |";
     cout <<"\n|----------------------------------|";
@@ -456,7 +457,7 @@ STAT goingbackOldMan(STAT x)
     cout <<"\n|===============================================================|";
     cout <<"\n|    He asks for 5 gold for the information and you give        |";
     cout <<"\n|    him the 5 gold and he tells you everything he knows        |";
-    cout <<"\n|===============================================================|";
+    cout <<"\n|===============================================================|\n";
     x.gold -= 5;
     return (x);
 }
@@ -467,16 +468,45 @@ void onTheRoadAgain()
     cout <<"\n|===============================================================|";
     cout <<"\n|                           Act II                              |";
     cout <<"\n|---------------------------------------------------------------|";
-    cout <<"\n|       You leave right after learning of the sighting and      |";
-    cout <<"\n|       head into the wild                                      |";
+    cout <<"\n|    You decide that you may want to stock up before leaving    |";
     cout <<"\n|===============================================================|";
-    cout <<"\n|           1.) Knock                                           |";
-    cout <<"\n|           2.) Break in                                        |";
-    cout <<"\n|           3.) Leave                                           |";
+    cout <<"\n|           1.) Go fight in the wilderness.                     |";
+    cout <<"\n|           2.) Go to armorsmith.                               |";
+    cout <<"\n|           3.) Go to weaponsmith.                              |";
+    cout <<"\n|           4.) Go to local Cleric.                             |";
+    cout <<"\n|           5.) Go to local inn and rest.                       |";
+    cout <<"\n|           6.) Go to find the dragon sightings.                |";
     cout <<"\n|===============================================================|";
     cout <<"\n          Choice: ";
 }
+void wilderness()
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                           Act II                              |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|       You leave right after learning of the sighting and      |";
+    cout <<"\n|       head into the wild                                      |";
+    cout <<"\n|===============================================================|\n";
+}
+STAT Armorsmith(STAT x)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                     Act II - Armorsmith                       |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|       Welcome to the armorsmith. You enter the shop and       |";
+    cout <<"\n|      find a small dwarf slamming his hammer against metal     |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|     The dwarf greets you with a gritty glance and stops       |";
+    cout <<"\n|     He walks up to his counter and jumps onto a stool to see  |";
+    cout <<"\n|     you and asks you what you want from his fine establishment|";
+    cout <<"\n|===============================================================|";
+    int armorLight = 0;
+    int armorMedium = 0;
+    int armorHeavy = 0;
 
+}
 
 
 

@@ -2,7 +2,7 @@
 #define BATTLESYSTEM_H_INCLUDED
 
 #include "HPBar.h"
-#include "Classes_or_Stats.h"
+
 
 STAT makemonsterSuperEasy()
 {
@@ -12,6 +12,7 @@ STAT makemonsterSuperEasy()
     x.intelligence = (rand() % 5)+1;
     x.charisma = (rand() % 5)+1;
     x.wisdom = (rand() % 5)+1;
+    x.constitution = (rand() % 5)+1;
     int armor = (rand() % 5)+1;
     int weapons = (rand() % 5)+1;
     int magicAbility = (rand() % 3)+1;
@@ -46,6 +47,7 @@ STAT makemonsterEasy()
     x.intelligence = (rand() % 10)+1;
     x.charisma = (rand() % 10)+1;
     x.wisdom = (rand() % 10)+1;
+    x.constitution = (rand() % 10)+1;
     int armor = (rand() % 10)+1;
     int weapons = (rand() % 10)+1;
     int magicAbility = (rand() % 5)+1;
@@ -81,6 +83,7 @@ STAT makemonsterMedium()
     x.intelligence = (rand() % 13)+1;
     x.charisma = (rand() % 13)+1;
     x.wisdom = (rand() % 13)+1;
+    x.constitution = (rand() % 13)+1;
     int armor = (rand() % 13)+1;
     int weapons = (rand() % 13)+1;
     int magicAbility = (rand() % 8)+1;
@@ -116,6 +119,7 @@ STAT makemonsterHard()
     x.intelligence = (rand() % 15)+1;
     x.charisma = (rand() % 15)+1;
     x.wisdom = (rand() % 15)+1;
+    x.constitution = (rand() % 15)+1;
     int armor = (rand() % 15)+1;
     int weapons = (rand() % 15)+1;
     int magicAbility = (rand() % 10)+1;
@@ -151,6 +155,7 @@ STAT makemonsterExtreme()
     x.intelligence = (rand() % 20)+1;
     x.charisma = (rand() % 20)+1;
     x.wisdom = (rand() % 20)+1;
+    x.constitution = (rand() % 20)+1;
     int armor = (rand() % 20)+1;
     int weapons = (rand() % 20)+1;
     int magicAbility = (rand() % 15)+1;
@@ -813,17 +818,19 @@ STAT Battle(STAT x, STAT y)
     if (y.healthPoints <= 0)
     {
         cout <<"\nYou defeated your opponent!";
-        goldWon = y.gold;
-        experienceEarned = y.level * 5;
+        goldWon = y.gold/3;
+        experienceEarned = (y.level * 5);
         cout <<"\nYou gain "<< goldWon <<" gold. \nYou always have gained " << experienceEarned <<" experience";
-        x.experience += experienceEarned;
         y.weaponSpec = weaponDropped;
         x.weaponSpec = weaponDroppedX;
-        x = levelCheck(x);
-        return (x);
+        x.gold = goldWon + x.gold;
+        x.experience = x.experience + experienceEarned;
+        return(x);
+        x.yourTurn = 1;
+        y.yourTurn = 0;
     }
 
-    if(y.yourTurn = 1)
+    if(y.yourTurn == 1)
     {
         cout << "\n\nThe enemy attacks you\n";
         d20M = (rand() % 20)+1 + y.attack;
@@ -846,7 +853,7 @@ STAT Battle(STAT x, STAT y)
     }
 
     }
-    return(x);
+
 }
 
 #endif // BATTLESYSTEM_H_INCLUDED

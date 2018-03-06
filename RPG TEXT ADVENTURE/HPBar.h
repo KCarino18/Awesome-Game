@@ -1,6 +1,7 @@
 #ifndef HPBAR_H_INCLUDED
 #define HPBAR_H_INCLUDED
 
+
 void HpMpBar(STAT x)
 {
     double hp, mp, mmp, mhp;
