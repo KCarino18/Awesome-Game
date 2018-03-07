@@ -3,6 +3,166 @@
 
 #include "HPBar.h"
 
+STAT randomItemSuperEasy(STAT x)
+{
+    bool cont = 0;
+    int yaBoughtIt = 0;
+    armor x1,x2,x3,x4,x5,x6,x7;
+
+    x1.armorBuffPlus = (rand() % 2)+1;
+    x2.armorBuffPlus = (rand() % 2)+1;
+    x3.armorBuffPlus = (rand() % 2)+1;
+    x4.armorBuffPlus = (rand() % 2)+1;
+    x5.armorBuffPlus = (rand() % 2)+1;
+    x6.armorBuffPlus = (rand() % 2)+1;
+    x7.armorBuffPlus = (rand() % 2)+1;
+
+    //light armor = 4
+    //medium armor = 6
+    //heavy armor = 8
+    x1.armorClassPlus = (rand() %4)+1;//light
+    x2.armorClassPlus = (rand() %4)+1;//light
+    x3.armorClassPlus = (rand() %6)+1;//medium
+    x4.armorClassPlus = (rand() %6)+1;//medium
+    x5.armorClassPlus = (rand() %8)+1;//heavy
+    x6.armorClassPlus = (rand() %8)+1;//heavy
+    x7.armorClassPlus = (rand() %8)+1;//heavy
+
+    //COST
+    x1.cost = ((rand() % 50)+150) * (x1.armorClassPlus);
+    x2.cost = ((rand() % 50)+150) * (x2.armorClassPlus);
+    x3.cost = ((rand() % 50)+150) * (x3.armorClassPlus);
+    x4.cost = ((rand() % 50)+150) * (x4.armorClassPlus);
+    x5.cost = ((rand() % 50)+150) * (x5.armorClassPlus);
+    x6.cost = ((rand() % 50)+150) * (x6.armorClassPlus);
+    x7.cost = ((rand() % 50)+150) * (x7.armorClassPlus);
+
+while (cont == 0)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                 Your choices are.....                         |";
+    cout <<"\n----------------------------------------------------------------|";
+    cout <<"\nCurrent Armorclass: " << x.armorClass << " Armor Buff: " << x.armorBuff;
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n1.) Light Armor 1 for : " << x1.cost << " -- Armorclass: " << x1.armorClassPlus << " -- buff to armorclass: " << x1.armorBuffPlus;
+    cout <<"\n2.) Light Armor 2 for : " << x2.cost << " -- Armorclass: " << x2.armorClassPlus << " -- buff to armorclass: " << x2.armorBuffPlus;
+    cout <<"\n3.) Medium Armor 1 for: " << x3.cost << " -- Armorclass: " << x3.armorClassPlus << " -- buff to armorclass: " << x3.armorBuffPlus;
+    cout <<"\n4.) Medium Armor 2 for: " << x4.cost << " -- Armorclass: " << x4.armorClassPlus << " -- buff to armorclass: " << x4.armorBuffPlus;
+    cout <<"\n5.) Heavy Armor 1 for : " << x5.cost << " -- Armorclass: " << x5.armorClassPlus << " -- buff to armorclass: " << x5.armorBuffPlus;
+    cout <<"\n6.) Heavy Armor 2 for : " << x6.cost << " -- Armorclass: " << x6.armorClassPlus << " -- buff to armorclass: " << x6.armorBuffPlus;
+    cout <<"\n7.) Heavy Armor 3 for : " << x7.cost << " -- Armorclass: " << x7.armorClassPlus << " -- buff to armorclass: " << x7.armorBuffPlus;
+    cout <<"\n|===============================================================|";
+    cout <<"\n                   Choice:";
+
+    switch (verifyInput(0,8))
+    {
+        case 1: // 1st option
+            if (x.gold >= x1.cost)
+            {
+                x.gold -= x1.cost;
+                x.armorClass = x1.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x1.armorBuffPlus
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 2: // 2nd option
+            if (x.gold >= x2.cost)
+            {
+                x.gold -= x2.cost;
+                x.armorClass = x2.armorClassPlus + 5 + (x.dexterity/4) + x2.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 3: // 3rd option
+            if (x.gold >= x3.cost)
+            {
+                x.gold -= x3.cost;
+                x.armorClass = x3.armorClassPlus + 5 + (x.dexterity/4) + x3.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 4: // 4th option
+            if (x.gold >= x4.cost)
+            {
+                x.gold -= x4.cost;
+                x.armorClass = x4.armorClassPlus + 5 + (x.dexterity/4) + x4.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 5: // 5th option
+            if (x.gold >= x5.cost)
+            {
+                x.gold -= x5.cost;
+                x.armorClass = x5.armorClassPlus + 5 + (x.dexterity/4) + x5.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 6: // 6th option
+            if (x.gold >= x6.cost)
+            {
+                x.gold -= x6.cost;
+                x.armorClass = x6.armorClassPlus + 5 + (x.dexterity/4) + x6.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 7: //7th option
+            if (x.gold >= x7.cost)
+            {
+                x.gold -= x7.cost;
+                x.armorClass = x7.armorClassPlus + 5 + (x.dexterity/4) + x7.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+    }
+}
+    return (x);
+
+
+}
+
 
 STAT makemonsterSuperEasy()
 {
@@ -465,7 +625,7 @@ STAT Battle(STAT x, STAT y)
         cout << "\n\nYou attempt to slash at the enemy\n";
         d20M = (rand() % 20)+1 + x.attack;
         melee = (rand() % 6) +1;
-        totalDamage = (x.plusAttack+x.weaponSpec+x.buff) + melee;
+        totalDamage = (x.plusAttack+x.weaponSpec+x.buff) + melee + x.weaponBuff;
 
         if(d20M > y.armorClass)
         {
@@ -835,7 +995,7 @@ STAT Battle(STAT x, STAT y)
         cout << "\n\nThe enemy attacks you\n";
         d20M = (rand() % 20)+1 + y.attack;
         totalDamage = (y.plusAttack+y.weaponSpec+y.buff);
-        if(d20M > x.armorClass)
+        if(d20M > (x.armorClass + x.armorBuff))
         {
             cout << "The opponent damages you for " <<  totalDamage <<" damage\n";
             x.healthPoints -=totalDamage;

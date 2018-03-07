@@ -28,6 +28,16 @@ using std::string;
 int main()
 {
     srand(time(0));
+    STAT x;
+    x.gold = 5000;
+    cout << x.armorBuff << " " << x.armorClass;
+    x = randomItemSuperEasy(x);
+    cout << x.armorBuff << " " << x.armorClass;
+
+}
+/*int main()
+{
+    srand(time(0));
     int armor,weapons, magicAbility,buffAbility,healAbility, rangeAbility; // DECLARING LOCAL VARIABLES
     unsigned int d20,d12,d8,d6;
     bool successOrFail, moveOn;
@@ -162,7 +172,7 @@ int main()
     x.maxMana = x.manaPoints;
     x.barter = (x.charisma /3) + 2;
     x.thieving = (x.dexterity / 3) + 2;
-    x.armorClass = ((armor/4) + 10 + (x.dexterity/4));
+    x.armorClass = ((armor/4) + 5 + (x.dexterity/4));
     x.weaponSpec = (weapons/3);
     x.attack = ((rangeAbility + magicAbility)/3) + x.weaponSpec;
     x.buff = buffAbility/4;
@@ -437,3 +447,4 @@ int main()
 
     return 0;
 }
+*/
