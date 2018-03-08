@@ -3,10 +3,179 @@
 
 #include "HPBar.h"
 
+void generateLightArmor()
+{
+    string first;
+    string second;
+    int random = (rand() % 4)+1;
+    int random2 = (rand() % 4)+1;
+
+    switch(random2)
+    {
+    case 1:
+        second = "Protection";
+        break;
+
+    case 2:
+        second = "Fortification";
+        break;
+
+    case 3:
+        second = "Mastery";
+        break;
+
+    case 4:
+        second = "Tanos";
+        break;
+    }
+
+    switch(random)
+    {
+    case 1: //padded
+        first = "Padded Armor of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 2: //Robe
+        first = "Robe of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 3: //Leather
+        first = "Leather Armor of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 4: //Studded Leather Armor
+        first = "Studded Leather Armor Of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+    }
+}
+
+void generateMediumArmor()
+{
+    string first;
+    string second;
+    int random = (rand() % 5)+1;
+    int random2 = (rand() % 4)+1;
+
+    switch(random2)
+    {
+    case 1:
+        second = "Protection";
+        break;
+
+    case 2:
+        second = "Fortification";
+        break;
+
+    case 3:
+        second = "Mastery";
+        break;
+
+    case 4:
+        second = "Tanos";
+        break;
+    }
+
+    switch(random)
+    {
+    case 1: //Hide
+        first = "Hide Armor of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 2: //Chain shirt
+        first = "Chain shirt of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 3: //Scale Mail
+        first = "Scale Mail of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 4: //BreastPlate
+        first = "Breastplate Of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 5: //Half Plate
+        first = "Half Plate Of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+    }
+}
+
+void generateHeavyArmor()
+{
+    string first;
+    string second;
+    int random = (rand() % 4)+1;
+    int random2 = (rand() % 4)+1;
+
+    switch(random2)
+    {
+    case 1:
+        second = "Protection";
+        break;
+
+    case 2:
+        second = "Fortification";
+        break;
+
+    case 3:
+        second = "Mastery";
+        break;
+
+    case 4:
+        second = "Tanos";
+        break;
+    }
+
+    switch(random)
+    {
+    case 1: //Hide
+        first = "Ring Mail of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 2: //Chain shirt
+        first = "Chain Mail of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 3: //Scale Mail
+        first = "Splint Armor of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+
+    case 4: //BreastPlate
+        first = "Plate Armor of ";
+        first = first + second;
+        cout << setw(39) << setfill(' ') << first;
+        break;
+    }
+}
+
 STAT randomItemSuperEasy(STAT x)
 {
     bool cont = 0;
     int yaBoughtIt = 0;
+    int armorYes = x.armorClass - 5 - (x.dexterity/4);
     armor x1,x2,x3,x4,x5,x6,x7;
 
     x1.armorBuffPlus = (rand() % 2)+1;
@@ -18,15 +187,15 @@ STAT randomItemSuperEasy(STAT x)
     x7.armorBuffPlus = (rand() % 2)+1;
 
     //light armor = 4
-    //medium armor = 6
-    //heavy armor = 8
+    //medium armor = 5
+    //heavy armor = 6
     x1.armorClassPlus = (rand() %4)+1;//light
     x2.armorClassPlus = (rand() %4)+1;//light
-    x3.armorClassPlus = (rand() %6)+1;//medium
-    x4.armorClassPlus = (rand() %6)+1;//medium
-    x5.armorClassPlus = (rand() %8)+1;//heavy
-    x6.armorClassPlus = (rand() %8)+1;//heavy
-    x7.armorClassPlus = (rand() %8)+1;//heavy
+    x3.armorClassPlus = (rand() %5)+1;//medium
+    x4.armorClassPlus = (rand() %5)+1;//medium
+    x5.armorClassPlus = (rand() %6)+1;//heavy
+    x6.armorClassPlus = (rand() %6)+1;//heavy
+    x7.armorClassPlus = (rand() %6)+1;//heavy
 
     //COST
     x1.cost = ((rand() % 50)+150) * (x1.armorClassPlus);
@@ -40,29 +209,44 @@ STAT randomItemSuperEasy(STAT x)
 while (cont == 0)
 {
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-    cout <<"\n|===============================================================|";
-    cout <<"\n|                 Your choices are.....                         |";
-    cout <<"\n----------------------------------------------------------------|";
-    cout <<"\nCurrent Armorclass: " << x.armorClass << " Armor Buff: " << x.armorBuff;
-    cout <<"\n|---------------------------------------------------------------|";
-    cout <<"\n1.) Light Armor 1 for : " << x1.cost << " -- Armorclass: " << x1.armorClassPlus << " -- buff to armorclass: " << x1.armorBuffPlus;
-    cout <<"\n2.) Light Armor 2 for : " << x2.cost << " -- Armorclass: " << x2.armorClassPlus << " -- buff to armorclass: " << x2.armorBuffPlus;
-    cout <<"\n3.) Medium Armor 1 for: " << x3.cost << " -- Armorclass: " << x3.armorClassPlus << " -- buff to armorclass: " << x3.armorBuffPlus;
-    cout <<"\n4.) Medium Armor 2 for: " << x4.cost << " -- Armorclass: " << x4.armorClassPlus << " -- buff to armorclass: " << x4.armorBuffPlus;
-    cout <<"\n5.) Heavy Armor 1 for : " << x5.cost << " -- Armorclass: " << x5.armorClassPlus << " -- buff to armorclass: " << x5.armorBuffPlus;
-    cout <<"\n6.) Heavy Armor 2 for : " << x6.cost << " -- Armorclass: " << x6.armorClassPlus << " -- buff to armorclass: " << x6.armorBuffPlus;
-    cout <<"\n7.) Heavy Armor 3 for : " << x7.cost << " -- Armorclass: " << x7.armorClassPlus << " -- buff to armorclass: " << x7.armorBuffPlus;
-    cout <<"\n|===============================================================|";
-    cout <<"\n                   Choice:";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n|                                   Your choices are.....                                           |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n|          Current Armor: " <<setw(3) << setfill(' ') << armorYes << "               Armor Buff: " << setw(3) << setfill(' ') << x.armorBuff << "          Current Gold: " << setw(5) << setfill(' ') << x.gold << "            |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n| 1.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x1.cost << "        Armor: " << setw(3) << setfill(' ') << x1.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x1.armorBuffPlus<< " |";
+    cout <<"\n| 2.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x2.cost << "        Armor: " << setw(3) << setfill(' ') << x2.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x2.armorBuffPlus<< " |";
+    cout <<"\n| 3.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x3.cost << "        Armor: " << setw(3) << setfill(' ') << x3.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x3.armorBuffPlus<< " |";
+    cout <<"\n| 4.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x4.cost << "        Armor: " << setw(3) << setfill(' ') << x4.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x4.armorBuffPlus<< " |";
+    cout <<"\n| 5.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x5.cost << "        Armor: " << setw(3) << setfill(' ') << x5.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x5.armorBuffPlus<< " |";
+    cout <<"\n| 6.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x6.cost << "        Armor: " << setw(3) << setfill(' ') << x6.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x6.armorBuffPlus<< " |";
+    cout <<"\n| 7.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x7.cost << "        Armor: " << setw(3) << setfill(' ') << x7.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x7.armorBuffPlus<< " |";
+    cout <<"\n| 8.) Exit                                                                                          |";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n                                          Choice:";
 
-    switch (verifyInput(0,8))
+    switch (verifyInput(0,9))
     {
         case 1: // 1st option
             if (x.gold >= x1.cost)
             {
                 x.gold -= x1.cost;
                 x.armorClass = x1.armorClassPlus + 5 + (x.dexterity/4);
-                x.armorBuff = x1.armorBuffPlus
+                x.armorBuff = x1.armorBuffPlus;
                 cont = 1;
             }
             else
@@ -76,7 +260,8 @@ while (cont == 0)
             if (x.gold >= x2.cost)
             {
                 x.gold -= x2.cost;
-                x.armorClass = x2.armorClassPlus + 5 + (x.dexterity/4) + x2.armorBuffPlus;
+                x.armorClass = x2.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x2.armorBuffPlus;
                 cont = 1;
             }
             else
@@ -90,7 +275,8 @@ while (cont == 0)
             if (x.gold >= x3.cost)
             {
                 x.gold -= x3.cost;
-                x.armorClass = x3.armorClassPlus + 5 + (x.dexterity/4) + x3.armorBuffPlus;
+                x.armorClass = x3.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x3.armorBuffPlus;
                 cont = 1;
             }
             else
@@ -104,7 +290,8 @@ while (cont == 0)
             if (x.gold >= x4.cost)
             {
                 x.gold -= x4.cost;
-                x.armorClass = x4.armorClassPlus + 5 + (x.dexterity/4) + x4.armorBuffPlus;
+                x.armorClass = x4.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x4.armorBuffPlus;
                 cont = 1;
             }
             else
@@ -118,7 +305,8 @@ while (cont == 0)
             if (x.gold >= x5.cost)
             {
                 x.gold -= x5.cost;
-                x.armorClass = x5.armorClassPlus + 5 + (x.dexterity/4) + x5.armorBuffPlus;
+                x.armorClass = x5.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x5.armorBuffPlus;
                 cont = 1;
             }
             else
@@ -132,7 +320,8 @@ while (cont == 0)
             if (x.gold >= x6.cost)
             {
                 x.gold -= x6.cost;
-                x.armorClass = x6.armorClassPlus + 5 + (x.dexterity/4) + x6.armorBuffPlus;
+                x.armorClass = x6.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x6.armorBuffPlus;
                 cont = 1;
             }
             else
@@ -146,7 +335,8 @@ while (cont == 0)
             if (x.gold >= x7.cost)
             {
                 x.gold -= x7.cost;
-                x.armorClass = x7.armorClassPlus + 5 + (x.dexterity/4) + x7.armorBuffPlus;
+                x.armorClass = x7.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x7.armorBuffPlus;
                 cont = 1;
             }
             else
@@ -156,6 +346,9 @@ while (cont == 0)
                 cont = 0;
             }
             break;
+        case 8:
+            cont = 1;
+            break;
     }
 }
     return (x);
@@ -163,7 +356,745 @@ while (cont == 0)
 
 }
 
+STAT randomItemEasy(STAT x)
+{
+    bool cont = 0;
+    int yaBoughtIt = 0;
+    int armorYes = x.armorClass - 5 - (x.dexterity/4);
+    armor x1,x2,x3,x4,x5,x6,x7;
 
+    x1.armorBuffPlus = (rand() % 3)+1;
+    x2.armorBuffPlus = (rand() % 3)+1;
+    x3.armorBuffPlus = (rand() % 3)+1;
+    x4.armorBuffPlus = (rand() % 3)+1;
+    x5.armorBuffPlus = (rand() % 3)+1;
+    x6.armorBuffPlus = (rand() % 3)+1;
+    x7.armorBuffPlus = (rand() % 3)+1;
+
+    //light armor = 5
+    //medium armor = 6
+    //heavy armor = 7
+    x1.armorClassPlus = (rand() %5)+1;//light
+    x2.armorClassPlus = (rand() %5)+1;//light
+    x3.armorClassPlus = (rand() %6)+1;//medium
+    x4.armorClassPlus = (rand() %6)+1;//medium
+    x5.armorClassPlus = (rand() %7)+1;//heavy
+    x6.armorClassPlus = (rand() %7)+1;//heavy
+    x7.armorClassPlus = (rand() %7)+1;//heavy
+
+    //COST
+    x1.cost = ((rand() % 100)+200) * (x1.armorClassPlus);
+    x2.cost = ((rand() % 100)+200) * (x2.armorClassPlus);
+    x3.cost = ((rand() % 100)+200) * (x3.armorClassPlus);
+    x4.cost = ((rand() % 100)+200) * (x4.armorClassPlus);
+    x5.cost = ((rand() % 100)+200) * (x5.armorClassPlus);
+    x6.cost = ((rand() % 100)+200) * (x6.armorClassPlus);
+    x7.cost = ((rand() % 100)+200) * (x7.armorClassPlus);
+
+while (cont == 0)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n|                                   Your choices are.....                                           |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n|          Current Armor: " <<setw(3) << setfill(' ') << armorYes << "               Armor Buff: " << setw(3) << setfill(' ') << x.armorBuff << "          Current Gold: " << setw(5) << setfill(' ') << x.gold << "            |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n| 1.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x1.cost << "        Armor: " << setw(3) << setfill(' ') << x1.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x1.armorBuffPlus<< " |";
+    cout <<"\n| 2.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x2.cost << "        Armor: " << setw(3) << setfill(' ') << x2.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x2.armorBuffPlus<< " |";
+    cout <<"\n| 3.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x3.cost << "        Armor: " << setw(3) << setfill(' ') << x3.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x3.armorBuffPlus<< " |";
+    cout <<"\n| 4.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x4.cost << "        Armor: " << setw(3) << setfill(' ') << x4.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x4.armorBuffPlus<< " |";
+    cout <<"\n| 5.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x5.cost << "        Armor: " << setw(3) << setfill(' ') << x5.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x5.armorBuffPlus<< " |";
+    cout <<"\n| 6.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x6.cost << "        Armor: " << setw(3) << setfill(' ') << x6.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x6.armorBuffPlus<< " |";
+    cout <<"\n| 7.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x7.cost << "        Armor: " << setw(3) << setfill(' ') << x7.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x7.armorBuffPlus<< " |";
+    cout <<"\n| 8.) Exit                                                                                          |";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n                                          Choice:";
+
+    switch (verifyInput(0,9))
+    {
+        case 1: // 1st option
+            if (x.gold >= x1.cost)
+            {
+                x.gold -= x1.cost;
+                x.armorClass = x1.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x1.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 2: // 2nd option
+            if (x.gold >= x2.cost)
+            {
+                x.gold -= x2.cost;
+                x.armorClass = x2.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x2.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 3: // 3rd option
+            if (x.gold >= x3.cost)
+            {
+                x.gold -= x3.cost;
+                x.armorClass = x3.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x3.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 4: // 4th option
+            if (x.gold >= x4.cost)
+            {
+                x.gold -= x4.cost;
+                x.armorClass = x4.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x4.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 5: // 5th option
+            if (x.gold >= x5.cost)
+            {
+                x.gold -= x5.cost;
+                x.armorClass = x5.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x5.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 6: // 6th option
+            if (x.gold >= x6.cost)
+            {
+                x.gold -= x6.cost;
+                x.armorClass = x6.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x6.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 7: //7th option
+            if (x.gold >= x7.cost)
+            {
+                x.gold -= x7.cost;
+                x.armorClass = x7.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x7.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 8:
+            cont = 1;
+            break;
+    }
+}
+    return (x);
+
+
+}
+
+STAT randomItemMedium(STAT x)
+{
+    bool cont = 0;
+    int yaBoughtIt = 0;
+    int armorYes = x.armorClass - 5 - (x.dexterity/4);
+    armor x1,x2,x3,x4,x5,x6,x7;
+
+    x1.armorBuffPlus = (rand() % 4)+1;
+    x2.armorBuffPlus = (rand() % 4)+1;
+    x3.armorBuffPlus = (rand() % 4)+1;
+    x4.armorBuffPlus = (rand() % 4)+1;
+    x5.armorBuffPlus = (rand() % 4)+1;
+    x6.armorBuffPlus = (rand() % 4)+1;
+    x7.armorBuffPlus = (rand() % 4)+1;
+
+    //light armor = 6
+    //medium armor = 7
+    //heavy armor = 8
+    x1.armorClassPlus = (rand() %6)+1;//light
+    x2.armorClassPlus = (rand() %6)+1;//light
+    x3.armorClassPlus = (rand() %7)+1;//medium
+    x4.armorClassPlus = (rand() %7)+1;//medium
+    x5.armorClassPlus = (rand() %8)+1;//heavy
+    x6.armorClassPlus = (rand() %8)+1;//heavy
+    x7.armorClassPlus = (rand() %8)+1;//heavy
+
+    //COST
+    x1.cost = ((rand() % 200)+250) * (x1.armorClassPlus);
+    x2.cost = ((rand() % 200)+250) * (x2.armorClassPlus);
+    x3.cost = ((rand() % 200)+250) * (x3.armorClassPlus);
+    x4.cost = ((rand() % 200)+250) * (x4.armorClassPlus);
+    x5.cost = ((rand() % 200)+250) * (x5.armorClassPlus);
+    x6.cost = ((rand() % 200)+250) * (x6.armorClassPlus);
+    x7.cost = ((rand() % 200)+250) * (x7.armorClassPlus);
+
+while (cont == 0)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n|                                   Your choices are.....                                           |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n|          Current Armor: " <<setw(3) << setfill(' ') << armorYes << "               Armor Buff: " << setw(3) << setfill(' ') << x.armorBuff << "          Current Gold: " << setw(5) << setfill(' ') << x.gold << "            |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n| 1.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x1.cost << "        Armor: " << setw(3) << setfill(' ') << x1.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x1.armorBuffPlus<< " |";
+    cout <<"\n| 2.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x2.cost << "        Armor: " << setw(3) << setfill(' ') << x2.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x2.armorBuffPlus<< " |";
+    cout <<"\n| 3.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x3.cost << "        Armor: " << setw(3) << setfill(' ') << x3.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x3.armorBuffPlus<< " |";
+    cout <<"\n| 4.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x4.cost << "        Armor: " << setw(3) << setfill(' ') << x4.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x4.armorBuffPlus<< " |";
+    cout <<"\n| 5.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x5.cost << "        Armor: " << setw(3) << setfill(' ') << x5.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x5.armorBuffPlus<< " |";
+    cout <<"\n| 6.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x6.cost << "        Armor: " << setw(3) << setfill(' ') << x6.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x6.armorBuffPlus<< " |";
+    cout <<"\n| 7.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x7.cost << "        Armor: " << setw(3) << setfill(' ') << x7.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x7.armorBuffPlus<< " |";
+    cout <<"\n| 8.) Exit                                                                                          |";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n                                          Choice:";
+
+    switch (verifyInput(0,9))
+    {
+        case 1: // 1st option
+            if (x.gold >= x1.cost)
+            {
+                x.gold -= x1.cost;
+                x.armorClass = x1.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x1.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 2: // 2nd option
+            if (x.gold >= x2.cost)
+            {
+                x.gold -= x2.cost;
+                x.armorClass = x2.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x2.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 3: // 3rd option
+            if (x.gold >= x3.cost)
+            {
+                x.gold -= x3.cost;
+                x.armorClass = x3.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x3.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 4: // 4th option
+            if (x.gold >= x4.cost)
+            {
+                x.gold -= x4.cost;
+                x.armorClass = x4.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x4.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 5: // 5th option
+            if (x.gold >= x5.cost)
+            {
+                x.gold -= x5.cost;
+                x.armorClass = x5.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x5.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 6: // 6th option
+            if (x.gold >= x6.cost)
+            {
+                x.gold -= x6.cost;
+                x.armorClass = x6.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x6.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 7: //7th option
+            if (x.gold >= x7.cost)
+            {
+                x.gold -= x7.cost;
+                x.armorClass = x7.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x7.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 8:
+            cont = 1;
+            break;
+    }
+}
+    return (x);
+
+
+}
+
+STAT randomItemHard(STAT x)
+{
+    bool cont = 0;
+    int yaBoughtIt = 0;
+    int armorYes = x.armorClass - 5 - (x.dexterity/4);
+    armor x1,x2,x3,x4,x5,x6,x7;
+
+    x1.armorBuffPlus = (rand() % 5)+1;
+    x2.armorBuffPlus = (rand() % 5)+1;
+    x3.armorBuffPlus = (rand() % 5)+1;
+    x4.armorBuffPlus = (rand() % 5)+1;
+    x5.armorBuffPlus = (rand() % 5)+1;
+    x6.armorBuffPlus = (rand() % 5)+1;
+    x7.armorBuffPlus = (rand() % 5)+1;
+
+    //light armor = 7
+    //medium armor = 8
+    //heavy armor = 10
+    x1.armorClassPlus = (rand() %7)+1;//light
+    x2.armorClassPlus = (rand() %7)+1;//light
+    x3.armorClassPlus = (rand() %8)+1;//medium
+    x4.armorClassPlus = (rand() %8)+1;//medium
+    x5.armorClassPlus = (rand() %10)+1;//heavy
+    x6.armorClassPlus = (rand() %10)+1;//heavy
+    x7.armorClassPlus = (rand() %10)+1;//heavy
+
+    //COST
+    x1.cost = ((rand() % 300)+300) * (x1.armorClassPlus);
+    x2.cost = ((rand() % 300)+300) * (x2.armorClassPlus);
+    x3.cost = ((rand() % 300)+300) * (x3.armorClassPlus);
+    x4.cost = ((rand() % 300)+300) * (x4.armorClassPlus);
+    x5.cost = ((rand() % 300)+300) * (x5.armorClassPlus);
+    x6.cost = ((rand() % 300)+300) * (x6.armorClassPlus);
+    x7.cost = ((rand() % 300)+300) * (x7.armorClassPlus);
+
+while (cont == 0)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n|                                   Your choices are.....                                           |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n|          Current Armor: " <<setw(3) << setfill(' ') << armorYes << "               Armor Buff: " << setw(3) << setfill(' ') << x.armorBuff << "          Current Gold: " << setw(5) << setfill(' ') << x.gold << "            |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n| 1.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x1.cost << "        Armor: " << setw(3) << setfill(' ') << x1.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x1.armorBuffPlus<< " |";
+    cout <<"\n| 2.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x2.cost << "        Armor: " << setw(3) << setfill(' ') << x2.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x2.armorBuffPlus<< " |";
+    cout <<"\n| 3.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x3.cost << "        Armor: " << setw(3) << setfill(' ') << x3.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x3.armorBuffPlus<< " |";
+    cout <<"\n| 4.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x4.cost << "        Armor: " << setw(3) << setfill(' ') << x4.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x4.armorBuffPlus<< " |";
+    cout <<"\n| 5.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x5.cost << "        Armor: " << setw(3) << setfill(' ') << x5.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x5.armorBuffPlus<< " |";
+    cout <<"\n| 6.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x6.cost << "        Armor: " << setw(3) << setfill(' ') << x6.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x6.armorBuffPlus<< " |";
+    cout <<"\n| 7.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x7.cost << "        Armor: " << setw(3) << setfill(' ') << x7.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x7.armorBuffPlus<< " |";
+    cout <<"\n| 8.) Exit                                                                                          |";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n                                          Choice:";
+
+    switch (verifyInput(0,9))
+    {
+        case 1: // 1st option
+            if (x.gold >= x1.cost)
+            {
+                x.gold -= x1.cost;
+                x.armorClass = x1.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x1.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 2: // 2nd option
+            if (x.gold >= x2.cost)
+            {
+                x.gold -= x2.cost;
+                x.armorClass = x2.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x2.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 3: // 3rd option
+            if (x.gold >= x3.cost)
+            {
+                x.gold -= x3.cost;
+                x.armorClass = x3.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x3.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 4: // 4th option
+            if (x.gold >= x4.cost)
+            {
+                x.gold -= x4.cost;
+                x.armorClass = x4.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x4.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 5: // 5th option
+            if (x.gold >= x5.cost)
+            {
+                x.gold -= x5.cost;
+                x.armorClass = x5.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x5.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 6: // 6th option
+            if (x.gold >= x6.cost)
+            {
+                x.gold -= x6.cost;
+                x.armorClass = x6.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x6.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 7: //7th option
+            if (x.gold >= x7.cost)
+            {
+                x.gold -= x7.cost;
+                x.armorClass = x7.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x7.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 8:
+            cont = 1;
+            break;
+    }
+}
+    return (x);
+
+
+}
+
+STAT randomItemExtreme(STAT x)
+{
+    bool cont = 0;
+    int yaBoughtIt = 0;
+    int armorYes = x.armorClass - 5 - (x.dexterity/4);
+    armor x1,x2,x3,x4,x5,x6,x7;
+
+    x1.armorBuffPlus = (rand() % 6)+1;
+    x2.armorBuffPlus = (rand() % 6)+1;
+    x3.armorBuffPlus = (rand() % 6)+1;
+    x4.armorBuffPlus = (rand() % 6)+1;
+    x5.armorBuffPlus = (rand() % 6)+1;
+    x6.armorBuffPlus = (rand() % 6)+1;
+    x7.armorBuffPlus = (rand() % 6)+1;
+
+    //light armor = 9
+    //medium armor = 11
+    //heavy armor = 13
+    x1.armorClassPlus = (rand() %9)+1;//light
+    x2.armorClassPlus = (rand() %9)+1;//light
+    x3.armorClassPlus = (rand() %11)+1;//medium
+    x4.armorClassPlus = (rand() %11)+1;//medium
+    x5.armorClassPlus = (rand() %13)+1;//heavy
+    x6.armorClassPlus = (rand() %13)+1;//heavy
+    x7.armorClassPlus = (rand() %13)+1;//heavy
+
+    //COST
+    x1.cost = ((rand() % 300)+300) * (x1.armorClassPlus);
+    x2.cost = ((rand() % 300)+300) * (x2.armorClassPlus);
+    x3.cost = ((rand() % 300)+300) * (x3.armorClassPlus);
+    x4.cost = ((rand() % 300)+300) * (x4.armorClassPlus);
+    x5.cost = ((rand() % 300)+300) * (x5.armorClassPlus);
+    x6.cost = ((rand() % 300)+300) * (x6.armorClassPlus);
+    x7.cost = ((rand() % 300)+300) * (x7.armorClassPlus);
+
+while (cont == 0)
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n|                                   Your choices are.....                                           |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n|          Current Armor: " <<setw(3) << setfill(' ') << armorYes << "               Armor Buff: " << setw(3) << setfill(' ') << x.armorBuff << "          Current Gold: " << setw(5) << setfill(' ') << x.gold << "            |";
+    cout <<"\n|---------------------------------------------------------------------------------------------------|";
+    cout <<"\n| 1.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x1.cost << "        Armor: " << setw(3) << setfill(' ') << x1.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x1.armorBuffPlus<< " |";
+    cout <<"\n| 2.) ";
+    generateLightArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x2.cost << "        Armor: " << setw(3) << setfill(' ') << x2.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') << x2.armorBuffPlus<< " |";
+    cout <<"\n| 3.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x3.cost << "        Armor: " << setw(3) << setfill(' ') << x3.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x3.armorBuffPlus<< " |";
+    cout <<"\n| 4.) ";
+    generateMediumArmor();
+    cout << " for :" << setw(4) << setfill(' ') << x4.cost << "        Armor: " << setw(3) << setfill(' ') << x4.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x4.armorBuffPlus<< " |";
+    cout <<"\n| 5.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x5.cost << "        Armor: " << setw(3) << setfill(' ') << x5.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x5.armorBuffPlus<< " |";
+    cout <<"\n| 6.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x6.cost << "        Armor: " << setw(3) << setfill(' ') << x6.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x6.armorBuffPlus<< " |";
+    cout <<"\n| 7.) ";
+    generateHeavyArmor();
+    cout <<" for :" << setw(4) << setfill(' ') << x7.cost << "        Armor: " << setw(3) << setfill(' ') << x7.armorClassPlus << "   buff to armorclass: " << setw(3) << setfill(' ') <<x7.armorBuffPlus<< " |";
+    cout <<"\n| 8.) Exit                                                                                          |";
+    cout <<"\n|===================================================================================================|";
+    cout <<"\n                                          Choice:";
+
+    switch (verifyInput(0,9))
+    {
+        case 1: // 1st option
+            if (x.gold >= x1.cost)
+            {
+                x.gold -= x1.cost;
+                x.armorClass = x1.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x1.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 2: // 2nd option
+            if (x.gold >= x2.cost)
+            {
+                x.gold -= x2.cost;
+                x.armorClass = x2.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x2.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 3: // 3rd option
+            if (x.gold >= x3.cost)
+            {
+                x.gold -= x3.cost;
+                x.armorClass = x3.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x3.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 4: // 4th option
+            if (x.gold >= x4.cost)
+            {
+                x.gold -= x4.cost;
+                x.armorClass = x4.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x4.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 5: // 5th option
+            if (x.gold >= x5.cost)
+            {
+                x.gold -= x5.cost;
+                x.armorClass = x5.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x5.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 6: // 6th option
+            if (x.gold >= x6.cost)
+            {
+                x.gold -= x6.cost;
+                x.armorClass = x6.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x6.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 7: //7th option
+            if (x.gold >= x7.cost)
+            {
+                x.gold -= x7.cost;
+                x.armorClass = x7.armorClassPlus + 5 + (x.dexterity/4);
+                x.armorBuff = x7.armorBuffPlus;
+                cont = 1;
+            }
+            else
+            {
+                cout <<"\n Insufficient funds available.....\n";
+                system("pause");
+                cont = 0;
+            }
+            break;
+        case 8:
+            cont = 1;
+            break;
+    }
+}
+    return (x);
+
+
+}
 STAT makemonsterSuperEasy()
 {
     STAT x;

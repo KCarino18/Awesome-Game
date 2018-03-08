@@ -25,17 +25,8 @@ using std::string;
 #include "BattleSystem.h"
 #include "HPBar.h"
 
-int main()
-{
-    srand(time(0));
-    STAT x;
-    x.gold = 5000;
-    cout << x.armorBuff << " " << x.armorClass;
-    x = randomItemSuperEasy(x);
-    cout << x.armorBuff << " " << x.armorClass;
 
-}
-/*int main()
+int main()
 {
     srand(time(0));
     int armor,weapons, magicAbility,buffAbility,healAbility, rangeAbility; // DECLARING LOCAL VARIABLES
@@ -370,8 +361,8 @@ int main()
         successOrFail = 1;
     }
 
-    moveOn = 0;
-    while (moveOn == 0)
+    moveOn = 1;
+    while (moveOn == 1)
 {
         onTheRoadAgain();
         STAT y =makemonsterSuperEasy();
@@ -383,35 +374,35 @@ int main()
         system("pause");
         if(d6 == 1)
         {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a wild boar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a wild boar  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
             system("pause");
         }
         else if (d6 == 2)
         {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a small goblin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a small goblin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
             system("pause");
         }
 
         else if (d6 == 3)
         {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a deserter\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a deserter    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
             system("pause");
         }
 
         else if (d6 == 4)
         {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a highwayman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a highwayman  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
             system("pause");
         }
         else if (d6 == 5)
         {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a giant spider\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a giant spider\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
             system("pause");
         }
 
         else
         {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a Wisp\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a Wisp        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
             system("pause");
         }
         x = Battle(x,y);
@@ -419,7 +410,7 @@ int main()
         break;
 
     case 2: // go to armorsmith
-        cout << "ARMOR";
+        x = randomItemSuperEasy(x);
         system("pause");
         break;
 
@@ -438,8 +429,8 @@ int main()
         system("pause");
         break;
 
-    case 7: //move on to the next one
-        cout <<"moveing on";
+    case 6: //move on to the next one
+        moveOn = 0;
         system("pause");
         break;
     }
@@ -447,4 +438,4 @@ int main()
 
     return 0;
 }
-*/
+
