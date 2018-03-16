@@ -38,6 +38,9 @@ struct STAT
     int armorBuff = 0;
     int weaponBuff = 0;
     bool yourTurn = 1;
+    int ArenaCounter = 0;
+    int ArenaPrice = 30;
+    int Act = 1;
 
 };
 
@@ -57,9 +60,9 @@ struct weapon
 {
     int cost = 0;
     //how much stuff costs
-    int weaponBuffPlus = 0;
+    int weaponbuff = 0;
     //damage + #
-    int weaponsPlus = 0;
+    int weaponSpec = 0;
     //Daggers = 5
     //longsword = 6(+4 to armorclass)
     //rapier = 5
@@ -68,7 +71,48 @@ struct weapon
     //two handed sword = 9 (-3 to armorclass)
     //two handed axe = 10 ( -4 to armorclass)
     //bow = 7 ( +2 to armorclass)
-    //bow = 5 ( +3 to armorclass)
+    //shortbow = 5 ( +3 to armorclass)
     //staff = 5 (+2 to x.magic)
+    int weaponType = 0;
+    //1-5
+    //1-10
+    //1-20
+    //1-25
+    //1-60
 };
+
+STAT Guthreed()
+{
+    STAT x;
+    x.strength = 25;
+    x.dexterity = 10;
+    x.intelligence = 5;
+    x.charisma = 5;
+    x.wisdom = 2;
+    x.constitution = 30;
+    int armor = 25;
+    int weapons = 25;
+    int magicAbility = 1;
+    int rangeAbility = 1;
+    int buffAbility = 20;
+    int healAbility = 1;
+
+    x.healthPoints = (x.constitution * 5) + 10;
+    x.manaPoints = (x.intelligence * 3) + (magicAbility * 5);
+    x.maxHealth = x.healthPoints;
+    x.maxMana = x.manaPoints;
+    x.barter = (x.charisma /3) + 2;
+    x.thieving = (x.dexterity / 3) + 2;
+    x.armorClass = ((armor/4) + 10 + (x.dexterity/4));
+    x.weaponSpec = (weapons/3);
+    x.attack = ((rangeAbility + magicAbility)/3) + x.weaponSpec;
+    x.buff = buffAbility/4;
+    x.chance = x.dexterity/4;
+    x.healing = healAbility/4;
+    x.magic = (x.wisdom/3);
+    x.plusAttack = (x.strength/3);
+    x.level = (rand() % 25)+1;
+    x.gold = (x.charisma * 10) + 25;
+    return x;
+}
 #endif // CLASSES_OR_STATS_H_INCLUDED

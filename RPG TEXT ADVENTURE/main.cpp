@@ -25,7 +25,6 @@ using std::string;
 #include "BattleSystem.h"
 #include "HPBar.h"
 
-
 int main()
 {
     srand(time(0));
@@ -192,9 +191,10 @@ int main()
         break;
     }
     STAT opponent;
-    CastleImage();
+   CastleImage();
     cout << "A long time ago, in the year of the hawk, in the world of Ezrulie (ezz-rule-ee) the great war reigned on throughout the ages between the dragon kings and the inhabitants of Ezrulie. During this war, in the town of Daggerfall, there lived an individual which would save us all.....\n";
     system("Pause");
+
 
     LevelOne(); //THE OLD MANS HOUSE
     switch (verifyInput(0,4))
@@ -330,8 +330,6 @@ int main()
         system("pause");
         break;
     }
-    TitleLogo();
-    system("pause");
     GoingToINN();
     system("pause");
     Bar(x);
@@ -372,60 +370,30 @@ int main()
     case 1: // go find monsters to fight
         wilderness();
         system("pause");
-        if(d6 == 1)
-        {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a wild boar  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            system("pause");
-        }
-        else if (d6 == 2)
-        {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a small goblin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            system("pause");
-        }
-
-        else if (d6 == 3)
-        {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a deserter    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            system("pause");
-        }
-
-        else if (d6 == 4)
-        {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a highwayman  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            system("pause");
-        }
-        else if (d6 == 5)
-        {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a giant spider\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            system("pause");
-        }
-
-        else
-        {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou encounter a Wisp        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            system("pause");
-        }
+        generateNameOfBeast();
+        system("pause");
         x = Battle(x,y);
         x = levelCheck(x);
         break;
 
     case 2: // go to armorsmith
+        Armorsmith();
         x = randomItemSuperEasy(x);
         system("pause");
         break;
 
     case 3: // Go to weaponsmith
-       cout <<"WEAPONS";
+        x = randomWeaponSuperEasy(x);
         system("pause");
         break;
 
     case 4: //go to cleric to get healed
-       cout << "HEALING";
+        x = INeedHealing(x);
         system("pause");
         break;
 
     case 5: //go to a different inn to rest
-       cout <<"RESTING TIME";
+        x = RoyalInn(x);
         system("pause");
         break;
 
@@ -435,6 +403,45 @@ int main()
         break;
     }
 }
+x.Act++;
+DragonSightings();
+int cont = 0;
+while ( cont == 0)
+{
+switch ( priorityToDoActII())
+{
+case 1://weaponsmith
+    x = randomWeaponEasy(x);
+    break;
+case 2://armorsmith
+    x = randomItemEasy(x);
+    break;
+case 3://clinic
+    x = INeedHealing(x);
+    break;
+case 4://inn
+    x = RoyalInn(x);
+    break;
+case 5://arena fights
+    x = Arena(x);
+    break;
+case 6://leave
+    Leaving();
+    cont = 1;
+    break;
+}
+}
+TitleLogo();
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 You find the Elders Hall and greet the elder. She greets you with a smile and welcomes you                                                 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 She tells you that she had been waiting for you. You approach the front of the hall where she sits.                                        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 The elder, which you now know as Sigewlar, starts telling the story of the dragon terrorizing their village                                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ";
+Dragon();
+
 
     return 0;
 }

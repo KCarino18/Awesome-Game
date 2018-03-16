@@ -489,7 +489,7 @@ void wilderness()
     cout <<"\n|       head into the wild                                      |";
     cout <<"\n|===============================================================|\n";
 }
-STAT Armorsmith(STAT x)
+void Armorsmith()
 {
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout <<"\n|===============================================================|";
@@ -501,11 +501,51 @@ STAT Armorsmith(STAT x)
     cout <<"\n|     The dwarf greets you with a gritty glance and stops       |";
     cout <<"\n|     He walks up to his counter and jumps onto a stool to see  |";
     cout <<"\n|     you and asks you what you want from his fine establishment|";
+    cout <<"\n|===============================================================|\n";
+    system("pause");
+}
+void DragonSightings()
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout <<"\n|===============================================================|";
-    int armorLight = 0;
-    int armorMedium = 0;
-    int armorHeavy = 0;
+    cout <<"\n|                       Dragon Sighting                         |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|        You spend a few days going to the village where        |";
+    cout <<"\n|      you had heard the dragon was living, you arrive at       |";
+    cout <<"\n|     the village and you must decide what is your priority     |";
+    cout <<"\n|===============================================================|\n";
+    system("pause");
+}
+void Leaving()
+{
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                 You head to the village elder                 |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|        You head to the village elder to question her on       |";
+    cout <<"\n|      where the dragon is hiding and she tells you that        |";
+    cout <<"\n|     the dragon is living on the hillside of Mount Kringor     |";
+    cout <<"\n|===============================================================|\n";
+    system("pause");
+}
+void Dragon()
+{
 
+ cout << "               ,'\   |\   \n";
+ cout << "              / /.:  ;;   \n";
+ cout << "             / :'|| //    \n";
+ cout << "             (| | ||;'    \n";
+ cout << "            / ||,;'-.._   \n";
+ cout << "            : ,;,`';:.--` \n";
+ cout << "            |:|'`-(\\     \n";
+ cout << "            ::: \-'\`'    \n";
+ cout << "             \\\ \,-`.    \n";
+ cout << "              `'\ `.,-`-._      ,-._        \n";
+ cout << "       ,-.       \  `.,-' `-.  / ,..`.      \n";
+ cout << "      / ,.`.      `.  \ _.-' \',: ``\ \     \n     / / :..`-'''``-)  `.   _.:''  ''\ \ \n    : :  '' `-..''`/    |-''  |''  '' \ \ \n    | |  ''   ''  :     |__..-;''  ''  : : \n    | |  ''   ''  |     ;    / ''  ''  | | \n    | |  ''   ''  ;    /--../_ ''_ '' _| | \n";
+ cout << "    | |  ''  _;:_/    :._  /-.'',-.'',-. | \n    : :  '',;'`;/     |_ ,(   `'   `'   \| \n     \ \  \(   /\     :,'  \ \n      \ \.'/  : /    ,)    / \n       \ ':   ':    / \   : \n        `.\    :   :\  \  | \n                \  | `. \ |..-_ \n";
+ cout << "             SSt ) |.  `/___-.-` \n               ,'  -.'.  `. `'        _,) \n               \'\(`.\ `._ `-..___..-',' \n                  `'      ``-..___..-'\n";
+ system("pause");
 }
 
 
