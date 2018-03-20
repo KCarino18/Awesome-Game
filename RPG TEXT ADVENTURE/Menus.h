@@ -1,6 +1,7 @@
 #ifndef MENUS_H_INCLUDED
 #define MENUS_H_INCLUDED
 
+#include "BattleSystem.h"
 
 void Mainmenu()
  // These make up the interface for presentation purposes
@@ -548,7 +549,264 @@ void Dragon()
  system("pause");
 }
 
+void village()
+{
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout << "     ~         ~~          __\n       _T      .,,.    ~--~ ^^\n ^^   // \                    ~\n      ][O]    ^^      ,-~ ~\n   /''-I_I         _II____\n__/_  /   \ ______/ ''   /'\_,__\n  | II--'''' \,--:--..,_/,.-{ },\n; '/__\,.--';|   |[] .-.| O{ _ }\n";
+    cout << ":' |  | []  -|   ''--:.;[,.'\,/\n'  |[]|,.--'' '',   ''-,.    |\n  ..    ..-''    ;       ''. '\n";
+    system("pause");
+
+}
+STAT DragonSightings( STAT x)
+{
+    bool succ = 0;
+    int fireD = (rand() % 12) + 1;
+    int D20 = (rand() % 20) + 1;
+    D20 = D20 + (x.dexterity/2);
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                       Time to get moving                      |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    After you rest in the village inn for the night, you       |";
+    cout <<"\n|    ready yourself for the journey up the mountain to kill     |";
+    cout <<"\n|    the dragon. Many of the villagers wish you off merrily.    |";
+    cout <<"\n|    You can't help but feel something is weird about the day.  |";
+    cout <<"\n|    Either way, you make your way up the mountain and into the |";
+    cout <<"\n|    blackened cave which you were told the dragon lives.       |";
+    cout <<"\n|    You light your torch and enter the cave. Just after a few  |";
+    cout <<"\n|    steps you find yourself lost and your torch goes out.      |";
+    cout <<"\n|    You take a few more steps and fall into a hole. A few      |";
+    cout <<"\n|    hours go by and eventually you see a torch appear at the   |";
+    cout <<"\n|    top of the hole which you fell into. As soon as she speaks |";
+    cout <<"\n|    you know for sure it's the village elder. She says         |";
+    cout <<"\n|    Now, you know why we can't let you kill this so called     |";
+    cout <<"\n|    dragon do you. You ask what the hell is she talking about  |";
+    cout <<"\n|    She states how she is the dragon and is only terrorizing   |";
+    cout <<"\n|    the countryside because she is trying to cleanse the world |";
+    cout <<"\n|    of evil and this is the only way. You tell her she is wrong|";
+    cout <<"\n|    and she gets tired of listening to you. She tells you to   |";
+    cout <<"\n|    pray that your soul is taken and throws the torch into the |";
+    cout <<"\n|    pit and it turns out you were sitting on dried leaves.     |";
+    cout <<"\n|    You must find a way to get out of the pit.                 |";
+    cout <<"\n|===============================================================|\n";
+    x.healthPoints = x.maxHealth;
+    x.manaPoints = x.maxMana;
+    system("pause");
+    while (succ == 0)
+    {
+    fireD = (rand() % 12) + 1;
+    D20 = ((rand() % 20) + 1) + (x.dexterity/2);
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                           Time to climb                       |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    You see the rock wall isn't all smooth and see a way       |";
+    cout <<"\n|    to climb up the wall and out of the blazing fire.          |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|      1.) CLIMB (Dexterity Check)                              |";
+    cout <<"\n|                                                               |";
+    cout <<"\n|      2.) Drink a HP Pot                                       |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n                  Choice: ";
+    switch(verifyInput(0,2))
+    {
+    case 1://dex check
+        if (D20 >= 15)
+        {
+            succ = 1;
+            cout << "\nSUCCESS\n";
+        }
+        else
+        {
+            x.healthPoints = x.healthPoints - 5;
+            cout << "\n\nYou try to climb but fall taking 5 damage\n Current Health: " << x.healthPoints << "/" << x.maxHealth;
+            cout << "\n\n";
+            system("pause");
+        }
+        if ( x.healthPoints <= 0)
+        {
+            cout << "\n============================YOU HAVE DIED============================\n";
+            exit(EXIT_SUCCESS);
+        }
+        break;
+    case 2:
+        cout << "\nYou attempt to drink a healing potion.\n";
+        if (x.HPots > 0)
+        {
+            x.HPots -= 1;
+            int healing_pot = (rand() % 20)+5;
+            if (x.maxHealth < (healing_pot+x.healthPoints))
+            {
+                x.healthPoints = x.maxHealth;
+            }
+            else
+            {
+                x.healthPoints += healing_pot;
+            }
+            cout << "You drink one potion healing. \n";
+        }
+        else
+        {
+            cout << "\nYou do not have any healing potions.\n";
+        }
+        system("pause");
+        break;
+
+    }
+    }
+    return x;
+}
+
+STAT villageNearby(STAT x)
+{
+    bool cont = 0;
+    STAT y = makemonsterMedium();
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n                                                                                     |===============================================================|";
+    cout <<"\n                                                                                     |                          The Return                           |";
+    cout <<"\n                                                                                     |---------------------------------------------------------------|";
+    cout <<"\n                                                                                     |    After climbing up the wall, you decide to run to the       |";
+    cout <<"\n                                                                                     |    nearby village that was not the original village to get    |";
+    cout <<"\n                                                                                     |    some help with trying to figure out what the real story is |";
+    cout <<"\n                                                                                     |    as well as getting ready for the future battles it may     |";
+    cout <<"\n                                                                                     |    bring to the land.                                         |";
+    cout <<"\n                                                                                     |===============================================================|\n";
+    system("pause");
+        cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n                                                                                     |===============================================================|";
+    cout <<"\n                                                                                     |                        The 'Better' Village                   |";
+    cout <<"\n                                                                                     |---------------------------------------------------------------|";
+    cout <<"\n                                                                                     |    As you arrive into the new village, you see everyone       |";
+    cout <<"\n                                                                                     |    come outside to watch you. They seem relieved and frightful|";
+    cout <<"\n                                                                                     |    to see that you are alive. You go see the local cleric     |";
+    cout <<"\n                                                                                     |    and the small halfling cleric heals you and bandages you.  |";
+    x.healthPoints = x.maxHealth;
+    cout <<"\n                                                                                     |    You must decide what to do next                            |";
+    cout <<"\n                                                                                     |===============================================================|";
+    system("pause");
+    cout <<"\n                                                                                     |           1.) Go train to get stronger.                       |";
+    cout <<"\n                                                                                     |           2.) Go to armorsmith.                               |";
+    cout <<"\n                                                                                     |           3.) Go to weaponsmith.                              |";
+    cout <<"\n                                                                                     |           4.) Go to local Cleric.                             |";
+    cout <<"\n                                                                                     |           5.) Go to local inn and rest.                       |";
+    cout <<"\n                                                                                     |           6.) Time to fight the elder.                        |";
+    cout <<"\n                                                                                     |===============================================================|";
+    cout <<"\n                                                                                                          Choice: ";
+    while (cont == 0)
+    {
+        switch ( verifyInput(0,7))
+        {
+        case 1:
+            wilderness();
+            generateNameOfBeast();
+            x = Battle(x, y);
+            x = levelCheck(x);
+            break;
+
+        case 2:
+            x = randomItemMedium(x);
+            break;
+
+        case 3:
+            x = randomWeaponMedium(x);
+            break;
+
+        case 4:
+            x = INeedHealing(x);
+            break;
+
+        case 5:
+            x = RoyalInn(x);
+            break;
+
+        case 6:
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou decide to hunt down the evil village elder.\n";
+            cont = 1;
+            system("pause");
+            break;
+        }
+    }
+    return x
+}
+
+STAT Journey(STAT x )
+{
+    bool cont = 0;
+    STAT y = makemonsterHard();
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                     Act III - Terrorization                   |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    You head out the next morning and start your hike to kill  |";
+    cout <<"\n|       the elder who turns out is the dragon that has been     |";
+    cout <<"\n|                     terrorizing the town.                     |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|       After reaching the village nearby, you notice a         |";
+    cout <<"\n|     calm and unsettling silence. As you enter the village,    |";
+    cout <<"\n|    you start to realize that everyone is dead and the elder   |";
+    cout <<"\n|   is no where to be seen. After seeing all of this, you hear  |";
+    cout <<"\n|  a roar in the air and see the dragon fly overhead, and start |";
+    cout <<"\n| flying in the direction of the city of Ethelroot, the capital |";
+    cout <<"\n|of Ezrulie. You start to panic and realize that you must return|";
+    cout <<"\n| to the city to help rid the world of this beast. You walk day |";
+    cout <<"\n|and night to try to reach the city before it is crumbled to the|";
+    cout <<"\n| ground. After 5 days of this, you reach the bordering town of |";
+    cout <<"\n|   Crutov and enter it and prepare for the real final battle.  |";
+    cout <<"\n|            (WARNING, FINAL BATTLE IS EXTREMELY HARD)          |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|           1.) Go fight in the wilderness.                     |";
+    cout <<"\n|           2.) Go to armorsmith.                               |";
+    cout <<"\n|           3.) Go to weaponsmith.                              |";
+    cout <<"\n|           4.) Go to local Cleric.                             |";
+    cout <<"\n|           5.) Go to local inn and rest.                       |";
+    cout <<"\n|           6.) Go to find the dragon sightings.                |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n          Choice: ";
+    while (cont == 0)
+    {
+        switch ( verifyInput(0,7))
+        {
+        case 1:
+            wilderness();
+            generateNameOfBeast();
+            x = Battle(x, y);
+            x = levelCheck(x);
+            break;
+
+        case 2:
+            x = randomItemHard(x);
+            break;
+
+        case 3:
+            x = randomWeaponHard(x);
+            break;
+
+        case 4:
+            x = INeedHealing(x);
+            break;
+
+        case 5:
+            x = RoyalInn(x);
+            break;
+
+        case 6:
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou decide that you are ready to face the dragon.\n";
+            cont = 1;
+            system("pause");
+            break;
+        }
+    }
+    return x
+
+}
+STAT finalBattle(STAT x)
+{
+    bool cont = 0;
+    STAT y = makemonsterExtreme();
+    cout " BATTLE TIME";
+    Battle(x, y);
+    return x;
 
 
+}
 
 #endif // MENUS_H_INCLUDED

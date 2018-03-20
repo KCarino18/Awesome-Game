@@ -441,6 +441,17 @@ cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 system("pause");
 cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ";
 Dragon();
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ";
+village();
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 The village was burned down and only a hand full of villagers and myself were able to get out                                               \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 If you are to kill this beast of the night, I will make you very very wealthy beyond your wildest dreams                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+system("pause");
+x = DragonSightings(x);
+x = villageNearby(x);
+x = Journey(x);
+x = finalBattle(x);
+
 
 
     return 0;
