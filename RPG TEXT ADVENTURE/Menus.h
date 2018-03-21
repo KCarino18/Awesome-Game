@@ -726,7 +726,7 @@ STAT villageNearby(STAT x)
             break;
         }
     }
-    return x
+    return x;
 }
 
 STAT Journey(STAT x )
@@ -795,14 +795,15 @@ STAT Journey(STAT x )
             break;
         }
     }
-    return x
+    return x;
 
 }
 STAT finalBattle(STAT x)
 {
     bool cont = 0;
     STAT y = makemonsterExtreme();
-    cout " BATTLE TIME";
+    cout << " BATTLE TIME ";
+    system("pause");
     Battle(x, y);
     return x;
 

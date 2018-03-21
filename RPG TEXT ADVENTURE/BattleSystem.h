@@ -3,6 +3,7 @@
 
 #include "HPBar.h"
 
+
 void generateNameWorkers()
 {
     string firstName;

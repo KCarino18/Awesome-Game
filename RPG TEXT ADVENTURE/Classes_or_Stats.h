@@ -1,6 +1,8 @@
 #ifndef CLASSES_OR_STATS_H_INCLUDED
 #define CLASSES_OR_STATS_H_INCLUDED
 
+
+
 struct STAT
 {
 
@@ -41,6 +43,7 @@ struct STAT
     int ArenaCounter = 0;
     int ArenaPrice = 30;
     int Act = 1;
+
 
 };
 
@@ -115,4 +118,53 @@ STAT Guthreed()
     x.gold = (x.charisma * 10) + 25;
     return x;
 }
+
+int valuemaker(weapon x, armor y)
+{
+    int p;
+    if (x.cost > 0)
+    {
+        p = (x.cost/2);
+    }
+    else if (y.cost > 0)
+    {
+        p = (y.cost/2);
+    }
+    else
+    {
+        p = 0;
+    }
+    return p;
+}
+struct ItemInInventory
+{
+    int weight = 0;
+    string name = "Empty";
+    armor x;
+    weapon y;
+    int value = valuemaker(y, x);
+
+
+};
+
+struct Inventory
+{
+    ItemInInventory a;
+    ItemInInventory b;
+    ItemInInventory c;
+    ItemInInventory d;
+    ItemInInventory e;
+    ItemInInventory f;
+    ItemInInventory g;
+    ItemInInventory h;
+    ItemInInventory i;
+    ItemInInventory j;
+    ItemInInventory k;
+    ItemInInventory l;
+    ItemInInventory m;
+    ItemInInventory n;
+    ItemInInventory o;
+    ItemInInventory p;
+};
+
 #endif // CLASSES_OR_STATS_H_INCLUDED
