@@ -3748,6 +3748,7 @@ STAT levelCheck(STAT x)
         x.armorClass += x.dexterity/4;
         x.magic = (x.wisdom/3);
         x.plusAttack = (x.strength/3);
+        x.level++;
         system("pause");
         return (x);
     }

@@ -2,19 +2,40 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="Classes_or_Stats.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2950" topLine="153" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16353" topLine="434" />
+		</Cursor>
+	</File>
+	<File name="Menus.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="52656" topLine="665" />
+		</Cursor>
+		<Folding>
+			<Collapse line="520" />
+			<Collapse line="532" />
+			<Collapse line="552" />
+			<Collapse line="560" />
+		</Folding>
+	</File>
 	<File name="resource.rc" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="123" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Verifiers.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="HPBar.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="301" topLine="19" />
+			<Cursor1 position="7668" topLine="324" />
 		</Cursor>
 	</File>
-	<File name="BattleSystem.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+	<File name="BattleSystem.h" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="90" topLine="895" />
+			<Cursor1 position="142483" topLine="133" />
 		</Cursor>
 		<Folding>
 			<Collapse line="7" />
@@ -52,32 +73,12 @@
 			<Collapse line="3600" />
 			<Collapse line="3635" />
 			<Collapse line="3671" />
+			<Collapse line="3696" />
 		</Folding>
 	</File>
-	<File name="Classes_or_Stats.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Verifiers.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2950" topLine="153" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="16353" topLine="434" />
-		</Cursor>
-	</File>
-	<File name="Menus.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="52656" topLine="665" />
-		</Cursor>
-		<Folding>
-			<Collapse line="520" />
-			<Collapse line="532" />
-			<Collapse line="552" />
-			<Collapse line="560" />
-		</Folding>
-	</File>
-	<File name="HPBar.h" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7668" topLine="324" />
+			<Cursor1 position="301" topLine="19" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
