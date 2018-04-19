@@ -28,7 +28,7 @@
 1524149970 c:\users\kyle\desktop\codeblocks\rpg text adventure\menus.h
 	"BattleSystem.h"
 
-1520466206 source:c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\main.cpp
+1524184545 source:c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\main.cpp
 	<iostream>
 	<array>
 	<memory>
@@ -42,27 +42,30 @@
 	<fstream>
 	<ctime>
 	<cstdlib>
+	<windows.h>
+	<MMSystem.h>
 	"Classes_or_Stats.h"
 	"Verifiers.h"
 	"Menus.h"
 	"BattleSystem.h"
 	"HPBar.h"
 
-1520456221 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\classes_or_stats.h
+1524150604 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\classes_or_stats.h
 
-1520456221 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\verifiers.h
+1524150604 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\verifiers.h
 
-1520456221 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\menus.h
+1524150604 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\menus.h
+	"BattleSystem.h"
 
-1520456221 source:c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\resource.rc
+1524150604 source:c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\resource.rc
 
 1524149970 c:\users\kyle\desktop\codeblocks\rpg text adventure\battlesystem.h
 	"HPBar.h"
 
-1520467010 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\battlesystem.h
+1524150604 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\battlesystem.h
 	"HPBar.h"
 
-1520456221 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\hpbar.h
+1524150604 c:\users\kcari\onedrive\desktop\codeblocksv2\rpg text adventure\hpbar.h
 
 1524147939 c:\users\kyle\desktop\codeblocks\rpg text adventure\hpbar.h
 

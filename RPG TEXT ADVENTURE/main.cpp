@@ -32,6 +32,7 @@ int main()
     int tryAgain = 1;
     while (tryAgain == 1 )
     {
+    PlaySound(TEXT("Music.wav"), NULL, SND_FILENAME|SND_LOOP|SND_ASYNC);
     srand(time(0));
     int armor,weapons, magicAbility,buffAbility,healAbility, rangeAbility; // DECLARING LOCAL VARIABLES
     unsigned int d20,d8,d6;
