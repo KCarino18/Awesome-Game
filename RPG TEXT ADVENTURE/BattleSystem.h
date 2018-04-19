@@ -2251,7 +2251,6 @@ STAT RoyalInn(STAT x)
 STAT randomWeaponExtreme(STAT x)
 {
     bool cont = 0;
-    int yaBoughtIt = 0;
     int weaponYes = x.attack - x.weaponSpec;
     weapon mace,dagger,longsword,rapier,scimitar,twohandedsword,twohandedaxe,bow,shortbow,staff;
 
@@ -2532,7 +2531,6 @@ STAT randomWeaponExtreme(STAT x)
 STAT randomItemSuperEasy(STAT x)
 {
     bool cont = 0;
-    int yaBoughtIt = 0;
     int armorYes = x.armorClass - 5 - (x.dexterity/4);
     armor x1,x2,x3,x4,x5,x6,x7;
 
@@ -2717,7 +2715,6 @@ while (cont == 0)
 STAT randomItemEasy(STAT x)
 {
     bool cont = 0;
-    int yaBoughtIt = 0;
     int armorYes = x.armorClass - 5 - (x.dexterity/4);
     armor x1,x2,x3,x4,x5,x6,x7;
 
@@ -2902,7 +2899,6 @@ while (cont == 0)
 STAT randomItemMedium(STAT x)
 {
     bool cont = 0;
-    int yaBoughtIt = 0;
     int armorYes = x.armorClass - 5 - (x.dexterity/4);
     armor x1,x2,x3,x4,x5,x6,x7;
 
@@ -3087,7 +3083,6 @@ while (cont == 0)
 STAT randomItemHard(STAT x)
 {
     bool cont = 0;
-    int yaBoughtIt = 0;
     int armorYes = x.armorClass - 5 - (x.dexterity/4);
     armor x1,x2,x3,x4,x5,x6,x7;
 
@@ -3272,7 +3267,6 @@ while (cont == 0)
 STAT randomItemExtreme(STAT x)
 {
     bool cont = 0;
-    int yaBoughtIt = 0;
     int armorYes = x.armorClass - 5 - (x.dexterity/4);
     armor x1,x2,x3,x4,x5,x6,x7;
 
@@ -3807,7 +3801,6 @@ STAT Battle(STAT x, STAT y)
 {
     int d20M = 0;
     int totalDamage = 0;
-    int d20 = 0;
     int goldWon = 0;
     int experienceEarned;
     int weaponDropped;
@@ -3815,7 +3808,7 @@ STAT Battle(STAT x, STAT y)
     weaponDroppedX = x.weaponSpec;
     int second =0;
     int melee = 0;
-    unsigned int steald20;
+
     if (x.weaponType >=60)
     {
         melee = (rand() % 60)+1;

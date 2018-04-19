@@ -11,6 +11,8 @@
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
+#include <windows.h>
+#include <MMSystem.h>
 
 using std::cin;
 using std::cout;
@@ -27,13 +29,27 @@ using std::string;
 
 int main()
 {
+    int tryAgain = 1;
+    while (tryAgain == 1 )
+    {
     srand(time(0));
     int armor,weapons, magicAbility,buffAbility,healAbility, rangeAbility; // DECLARING LOCAL VARIABLES
-    unsigned int d20,d12,d8,d6;
+    unsigned int d20,d8,d6;
     bool successOrFail, moveOn;
+    STAT x;
     Mainmenu();
-    switch (verifyInput(0,10)) // ADDS UP TO 30
+    switch (verifyInput(-1,10)) // ADDS UP TO 30
     {
+    case 0: //The god
+        weapons = 250;
+        armor = 250;
+        magicAbility = 250;
+        buffAbility = 250;
+        healAbility = 250;
+        rangeAbility = 250;
+        x.totalLeft = 1200;
+        x.totalLeftCompare = 1200;
+        break;
     case 1: //Wizard
         weapons = 4;
         armor = 3;
@@ -108,7 +124,6 @@ int main()
         break;
     };
 
-    STAT x;
 
     StatsMenu();
 
@@ -133,7 +148,7 @@ int main()
 
 
     x.total = (x.strength + x.charisma + x.wisdom + x.constitution + x.dexterity + x.intelligence);
-    while (x.total> 32){
+    while (x.total> x.totalLeftCompare){
     x.totalLeft = 32;
     cout << "Please enter in your stats adding up to a total of 32 again:" << endl;
     cout << "Strength? " << endl;
@@ -451,8 +466,31 @@ x = DragonSightings(x);
 x = villageNearby(x);
 x = Journey(x);
 x = finalBattle(x);
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Would You Like To Play Again? ( 1 = yes, 0 = no )";
+cout <<"\n                                         Choice: ";
+tryAgain = verifyInput(-1,2);
 
-
+    }
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                               CREDITS:";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Game Producer: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Game Creator: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Game Director: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Game Sound Design: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Lead Coder: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Game Design: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Lead Actor: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                     Fun Designer: Kyle Carino";
+system("pause");
+cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                               Thank you for playing my dumb little game";
+system("pause");
 
     return 0;
 }

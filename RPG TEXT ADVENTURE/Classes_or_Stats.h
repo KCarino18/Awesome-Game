@@ -43,6 +43,7 @@ struct STAT
     int ArenaCounter = 0;
     int ArenaPrice = 30;
     int Act = 1;
+    int totalLeftCompare = 32;
 
 
 };
