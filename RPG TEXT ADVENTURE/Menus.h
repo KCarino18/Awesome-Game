@@ -660,15 +660,15 @@ STAT villageNearby(STAT x)
     bool cont = 0;
     STAT y = makemonsterMedium();
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-    cout <<"\n                                                                                     |===============================================================|";
-    cout <<"\n                                                                                     |                          The Return                           |";
-    cout <<"\n                                                                                     |---------------------------------------------------------------|";
-    cout <<"\n                                                                                     |    After climbing up the wall, you decide to run to the       |";
-    cout <<"\n                                                                                     |    nearby village that was not the original village to get    |";
-    cout <<"\n                                                                                     |    some help with trying to figure out what the real story is |";
-    cout <<"\n                                                                                     |    as well as getting ready for the future battles it may     |";
-    cout <<"\n                                                                                     |    bring to the land.                                         |";
-    cout <<"\n                                                                                     |===============================================================|\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                          The Return                           |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    After climbing up the wall, you decide to run to the       |";
+    cout <<"\n|    nearby village that was not the original village to get    |";
+    cout <<"\n|    some help with trying to figure out what the real story is |";
+    cout <<"\n|    as well as getting ready for the future battles it may     |";
+    cout <<"\n|    bring to the land.                                         |";
+    cout <<"\n|===============================================================|\n";
     system("pause");
     cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     x.healthPoints = x.maxHealth;
@@ -677,28 +677,30 @@ STAT villageNearby(STAT x)
     while (cont == 0)
     {
         cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-        cout <<"\n                                                                                     |===============================================================|";
-        cout <<"\n                                                                                     |                        The 'Better' Village                   |";
-        cout <<"\n                                                                                     |---------------------------------------------------------------|";
-        cout <<"\n                                                                                     |    As you arrive into the new village, you see everyone       |";
-        cout <<"\n                                                                                     |    come outside to watch you. They seem relieved and frightful|";
-        cout <<"\n                                                                                     |    to see that you are alive. You go see the local cleric     |";
-        cout <<"\n                                                                                     |    and the small halfling cleric heals you and bandages you.  |";
-        cout <<"\n                                                                                     |    You must decide what to do next                            |";
-        cout <<"\n                                                                                     |===============================================================|\n";
-        cout <<"                                                                                     |           1.) Go train to get stronger.                       |";
-        cout <<"\n                                                                                     |           2.) Go to armorsmith.                               |";
-        cout <<"\n                                                                                     |           3.) Go to weaponsmith.                              |";
-        cout <<"\n                                                                                     |           4.) Go to local Cleric.                             |";
-        cout <<"\n                                                                                     |           5.) Go to local inn and rest.                       |";
-        cout <<"\n                                                                                     |           6.) Time to fight the elder.                        |";
-        cout <<"\n                                                                                     |===============================================================|";
-        cout <<"\n                                                                                                          Choice: ";
+        cout <<"\n|===============================================================|";
+        cout <<"\n|                        The 'Better' Village                   |";
+        cout <<"\n|---------------------------------------------------------------|";
+        cout <<"\n|    As you arrive into the new village, you see everyone       |";
+        cout <<"\n|    come outside to watch you. They seem relieved and frightful|";
+        cout <<"\n|    to see that you are alive. You go see the local cleric     |";
+        cout <<"\n|    and the small halfling cleric heals you and bandages you.  |";
+        cout <<"\n|    You must decide what to do next                            |";
+        cout <<"\n|===============================================================|\n";
+        cout <<"|           1.) Go train to get stronger.                       |";
+        cout <<"\n|           2.) Go to armorsmith.                               |";
+        cout <<"\n|           3.) Go to weaponsmith.                              |";
+        cout <<"\n|           4.) Go to local Cleric.                             |";
+        cout <<"\n|           5.) Go to local inn and rest.                       |";
+        cout <<"\n|           6.) Time to fight the elder.                        |";
+        cout <<"\n|===============================================================|";
+        cout <<"\n                     Choice: ";
         switch ( verifyInput(0,7))
         {
         case 1:
             wilderness();
+            system("pause");
             generateNameOfBeast();
+            system("pause");
             x = Battle(x, y);
             x = levelCheck(x);
             break;
@@ -773,7 +775,9 @@ STAT Journey(STAT x )
         {
         case 1:
             wilderness();
+            system("pause");
             generateNameOfBeast();
+            system("pause");
             x = Battle(x, y);
             x = levelCheck(x);
             break;
@@ -813,12 +817,121 @@ STAT Journey(STAT x )
 STAT finalBattle(STAT x)
 {
     STAT y = makemonsterExtreme();
-    cout << " BATTLE TIME ";
+    y.maxHealth= y.maxHealth + 1000;
+    y.healthPoints = y.healthPoints + 1000;
+    cout << " WELCOME TO MY WORLD......";
     system("pause");
     Battle(x, y);
     return x;
 
 
+}
+STAT TheGrandHall(STAT x)
+{
+    bool cont = 0;
+    bool woot = 0;
+    while (cont == 0)
+    {
+    STAT y = makemonsterHard();
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                         The Great Hall                        |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    Before heading out to the cave which the elder told you    |";
+    cout <<"\n|    where the dragon lives, you are able to walk around and    |";
+    cout <<"\n|    talk to the village royalty that is sitting and talking.   |";
+    cout <<"\n|    You see a wealthy merchant, a beautiful princess, and a    |";
+    cout <<"\n|    local royal guard.                                         |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|           1.) Go talk to Princess                             |";
+    cout <<"\n|           2.) Go talk to Merchant                             |";
+    cout <<"\n|           3.) Go talk to Royal Guard                          |";
+    cout <<"\n|           4.) Go out and train a bit more                     |";
+    cout <<"\n|           5.) Go to the cave                                  |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n          Choice: ";
+    switch ( verifyInput(0,6))
+    {
+    case 1:
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                       Talk to Princess                        |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    As you approach the princess, she turns to look and greet  |";
+    cout <<"\n|    you on your approach.                                      |";
+    cout <<"\n|    Princess: Hello there, you must be the knight sent here    |";
+    cout <<"\n|              slay the dragon that has plagued our villages    |";
+    cout <<"\n|              in Ezriel. Thank you for helping us              |";
+    cout <<"\n|---------------------------------------------------------------|";
+    system("pause");
+    break;
+
+    case 2:
+    cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                       Talk to Merchant                        |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    The merchant looks at you like one of his lovely customers |";
+    cout <<"\n|    that he usually deals with on a normal basis               |";
+    cout <<"\n|    Merchant: Hello there little knight, do I have a deal for  |";
+    cout <<"\n|              you. I will tell you what, you give me 200gp and |";
+    cout <<"\n|              I will give you 3, count them, 3 HP potions.     |";
+    cout <<"\n|              What do ya say?                                  |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|  1.) Sure ( -200gp)                                           |";
+    cout <<"\n|  2.) Nah, I will pass                                         |";
+    cout <<"\n|===============================================================|";
+    cout <<"\n                          Choice:";
+        while (woot == 0)
+        {
+        switch(verifyInput(0,3))
+        {
+        case 1:
+            if( x.gold >=200)
+            {
+                x.gold = x.gold - 200;
+                x.HPots= x.HPots + 3;
+                woot = 1;
+            }
+            else
+            {
+                cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can't afford it, sorry.";
+            }
+            break;
+        case 2:
+            cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOk, I guess you are too good for my Potions....";
+            woot = 1;
+            break;
+        }
+        }
+    break;
+
+    case 3:
+        cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout <<"\n|===============================================================|";
+    cout <<"\n|                   Talk to The Royal Guard                     |";
+    cout <<"\n|---------------------------------------------------------------|";
+    cout <<"\n|    The Royal Guardsman just looks at you as you approach      |";
+    cout <<"\n|    and doesn't even utter a word to you. You try to talk to   |";
+    cout <<"\n|    him and he does not even look your way or anything         |";
+    cout <<"\n|===============================================================|";
+    system("pause");
+    break;
+
+    case 4:
+        wilderness();
+            system("pause");
+            generateNameOfBeast();
+            system("pause");
+            x = Battle(x, y);
+            x = levelCheck(x);
+            break;
+
+    case 5:
+        cont = 1;
+        break;
+    }
+}
+return x;
 }
 
 #endif // MENUS_H_INCLUDED

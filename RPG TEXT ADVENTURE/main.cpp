@@ -463,6 +463,7 @@ cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 system("pause");
 cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 If you are to kill this beast of the night, I will make you very very wealthy beyond your wildest dreams                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 system("pause");
+x = TheGrandHall(x);
 x = DragonSightings(x);
 x = villageNearby(x);
 x = Journey(x);
